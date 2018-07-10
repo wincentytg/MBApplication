@@ -3,7 +3,10 @@ package com.ytg.p_db;
 import java.util.List;
 
 import android.database.sqlite.SQLiteDatabase;
-
+/**
+ *
+ * @author 于堂刚
+ */
 public interface IDBManager {
 	/**
 	 * 获取数据库

@@ -5,7 +5,10 @@ import java.util.LinkedList;
 import java.util.Map;
 
 import android.database.sqlite.SQLiteDatabase;
-
+/**
+ *
+ * @author 于堂刚
+ */
 public class BaseDBManager {
 
 	protected Config mConfig;

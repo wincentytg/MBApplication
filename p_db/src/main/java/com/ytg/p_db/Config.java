@@ -1,7 +1,10 @@
 package com.ytg.p_db;
 
 import android.content.Context;
-
+/**
+ *
+ * @author 于堂刚
+ */
 public class Config {
 	private Context context;
 	private String dbName;

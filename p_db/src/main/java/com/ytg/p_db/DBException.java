@@ -1,5 +1,8 @@
 package com.ytg.p_db;
-
+/**
+ *
+ * @author 于堂刚
+ */
 public class DBException extends BaseDBException {
 	private static final long serialVersionUID = 1L;
 

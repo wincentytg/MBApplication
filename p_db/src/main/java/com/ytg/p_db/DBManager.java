@@ -20,7 +20,10 @@ import java.util.Map;
 import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;
 
-
+/**
+ *
+ * @author 于堂刚
+ */
 public class DBManager extends BaseDBManager implements IDBManager {
 
 	private static final String TAG = "DBManager";
