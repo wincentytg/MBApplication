@@ -1,0 +1,41 @@
+apply plugin: 'com.android.library'
+
+android {
+    compileSdkVersion parent.ext.compileSdkVersion
+    buildToolsVersion parent.ext.buildToolsVersion
+
+
+    defaultConfig {
+        minSdkVersion parent.ext.minSdkVersion
+        versionCode parent.ext.versionCode
+        versionName parent.ext.versionName
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        flavorDimensions "versionCode"
+    }
+
+    buildTypes {
+        debug{}
+
+        release {
+            consumerProguardFiles 'proguard-rules.pro'
+        }
+    }
+    // Remove warnings
+    lintOptions {
+        checkReleaseBuilds false
+        // Or, if you prefer, you can continue to check for errors in release builds,
+        // but continue the build even when errors are found:
+        abortOnError false
+    }
+    publishNonDefault true
+    productFlavors {
+        channel_1 {}
+    }
+
+}
+
+dependencies {
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+
+    compile rootProject.ext.dependencies["recyclerview-v7"]
+}
