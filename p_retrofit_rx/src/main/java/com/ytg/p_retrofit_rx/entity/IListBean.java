@@ -5,9 +5,8 @@ import java.util.Map;
 import io.reactivex.Observable;
 
 /**
- * author weiss
- * email kleinminamo@gmail.com
- * created 2018/2/27.
+ *
+ * @author 于堂刚
  */
 interface IListBean {
     //获取第几页

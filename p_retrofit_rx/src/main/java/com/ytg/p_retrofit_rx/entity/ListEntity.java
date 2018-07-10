@@ -6,9 +6,9 @@ import java.util.Map;
 import io.reactivex.Observable;
 
 /**
- * Created by Weiss on 2017/1/21.
+ *
+ * @author 于堂刚
  */
-
 public abstract class ListEntity<T> extends Entity implements IListBean {
 
     @Override

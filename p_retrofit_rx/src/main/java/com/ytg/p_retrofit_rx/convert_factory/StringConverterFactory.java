@@ -8,7 +8,10 @@ import okhttp3.ResponseBody;
 import retrofit2.Converter;
 import retrofit2.Retrofit;
 
-
+/**
+ *
+ * @author 于堂刚
+ */
 public class StringConverterFactory extends Converter.Factory {
 
     public static StringConverterFactory create() {

@@ -1,9 +1,9 @@
 package com.ytg.p_retrofit_rx.entity;
 
 /**
- * Created by Weiss on 2017/1/11.
+ *
+ * @author 于堂刚
  */
-
 public abstract class BaseHttpResult<T> extends Entity {
 
     public abstract boolean isSuccess();

@@ -20,8 +20,8 @@ import retrofit2.http.QueryMap;
 import retrofit2.http.Streaming;
 import retrofit2.http.Url;
 /**
- * Created by Ｔａｍｉｃ on 2016-07-08.
- * {@link # https://github.com/NeglectedByBoss/RetrofitClient}
+ *
+ * @author 于堂刚
  */
 public interface BaseApiService {
 

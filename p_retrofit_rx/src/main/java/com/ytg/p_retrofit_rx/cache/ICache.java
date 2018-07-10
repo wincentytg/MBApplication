@@ -1,7 +1,8 @@
 package com.ytg.p_retrofit_rx.cache;
 
 /**
- * Created by Weiss on 2017/1/10.
+ *
+ * @author 于堂刚
  */
 
 public interface ICache {

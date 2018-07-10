@@ -1,5 +1,8 @@
 package com.ytg.p_retrofit_rx.entity;
-
+/**
+ *
+ * @author 于堂刚
+ */
 public class BaseEntity<T> {
     private String msg;//请求成功或失败描述
     private int status;//错误码

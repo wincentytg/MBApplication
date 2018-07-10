@@ -8,11 +8,9 @@ import okhttp3.HttpUrl;
 
 
 /**
- * RetrofitClient
- * Created by Tamic on 2016-06-15.
- * {@link # https://github.com/NeglectedByBoss/RetrofitClient}
+ *
+ * @author 于堂刚
  */
-
 public class MCookieManger implements CookieJar {
 
     private static final String TAG = "MCookieManger";

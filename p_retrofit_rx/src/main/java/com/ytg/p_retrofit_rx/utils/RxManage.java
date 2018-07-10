@@ -6,6 +6,7 @@ import io.reactivex.disposables.CompositeDisposable;
 import io.reactivex.disposables.Disposable;
 
 /**
+ *  @author 于堂刚
  * 用于管理Rxjava相关代码的生命周期处理
  */
 public class RxManage{

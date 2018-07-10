@@ -21,8 +21,8 @@ import okhttp3.Cookie;
 import okhttp3.HttpUrl;
 
 /**
- * Created by Tamic on 2016-06-09.
- * {@link # https://github.com/NeglectedByBoss/RetrofitClient}
+ *
+ * @author 于堂刚
  */
 public class PersistentCookieStore {
     private static final String LOG_TAG = "PersistentCookieStore";

@@ -10,7 +10,10 @@ import java.net.UnknownHostException;
 import java.util.concurrent.TimeoutException;
 
 import io.reactivex.observers.DisposableObserver;
-
+/**
+ *
+ * @author 于堂刚
+ */
 public abstract class BaseObserverString extends DisposableObserver<String> {
 
     private static final String TAG = BaseObserverString.class.getSimpleName();

@@ -4,7 +4,10 @@ import java.io.IOException;
 
 import okhttp3.ResponseBody;
 import retrofit2.Converter;
-
+/**
+ *
+ * @author 于堂刚
+ */
 public class StringResponseBodyConverter implements Converter<ResponseBody, String> {
     @Override
     public String convert(ResponseBody value) throws IOException {
