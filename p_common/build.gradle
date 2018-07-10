@@ -67,7 +67,7 @@ dependencies {
     implementation project(':p_db')
     compile files('libs/eventbus.jar')
     compile files('libs/glide-3.7.0.jar')
-    if (rootProject.ext.isModule) {
+    if (rootProject.ext.isOkhttp) {
         compile project(':p_okhttp')
     } else {
         compile project(':p_volley')

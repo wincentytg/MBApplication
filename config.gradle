@@ -1,7 +1,7 @@
 /*全局配置信息及第三方依赖统一管理*/
 ext{
-    isModule = false
-moduleTestIsModule = false
+    isOkhttp = false //来配置网络请求框架 选择性编译
+    moduleTestIsModule = false //配置组件是单独运行还是 编译到朱项目里去
     project.ext {
         buildToolsVersion = "26.0.0"
         compileSdkVersion = 26
@@ -11,14 +11,6 @@ moduleTestIsModule = false
         targetSdkVersion=21
     }
     android = [
-//            compileSdkVersion   : 26,
-//            buildToolsVersion   : '26.0.0',
-//            minSdkVersion       : 26,
-//            targetSdkVersion    : 23,
-//            versionCode         : 1,
-//            versionName         : "1.0.0",
-//            applicationId       : "com.ytg.jzytest",
-
             androidSupportSdkVersion: "26.1.0"
     ]
 
