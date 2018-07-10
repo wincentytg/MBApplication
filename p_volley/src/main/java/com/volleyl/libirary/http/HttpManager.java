@@ -21,7 +21,10 @@ import org.json.JSONObject;
 import java.io.File;
 import java.io.InputStream;
 import java.util.Map;
-
+/**
+ *
+ * @author 于堂刚
+ */
 public class HttpManager implements IHttpManager {
 
 	private static final String TAG = "HttpManager";

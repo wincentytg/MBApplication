@@ -1,14 +1,5 @@
 package com.volley.libirary.http.request;
 
-import java.io.UnsupportedEncodingException;
-import java.util.HashMap;
-import java.util.Map;
-
-import org.json.JSONException;
-import org.json.JSONObject;
-
-import android.util.Log;
-
 import com.android.volley.AuthFailureError;
 import com.android.volley.NetworkResponse;
 import com.android.volley.Response;
@@ -17,6 +8,15 @@ import com.android.volley.Response.Listener;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.HttpHeaderParser;
 
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.io.UnsupportedEncodingException;
+import java.util.Map;
+/**
+ *
+ * @author 于堂刚
+ */
 public class JsonObjectBodyRequest extends IRequest<JSONObject> {
 
 	public JsonObjectBodyRequest(RequestParam param,

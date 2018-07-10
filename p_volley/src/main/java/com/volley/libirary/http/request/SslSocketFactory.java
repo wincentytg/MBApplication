@@ -25,7 +25,10 @@ import javax.net.ssl.SSLContext;
 import javax.net.ssl.TrustManager;
 import khandroid.ext.apache.http.conn.ssl.SSLSocketFactory;
 
-
+/**
+ *
+ * @author 于堂刚
+ */
 class SslSocketFactory extends SSLSocketFactory {
     public SslSocketFactory(InputStream keyStore, String keyStorePassword) throws GeneralSecurityException {
         super(createSSLContext(keyStore, keyStorePassword), STRICT_HOSTNAME_VERIFIER);

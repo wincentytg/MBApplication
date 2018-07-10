@@ -29,7 +29,10 @@ import javax.net.ssl.TrustManager;
 import javax.net.ssl.TrustManagerFactory;
 import javax.net.ssl.X509TrustManager;
 
-
+/**
+ *
+ * @author 于堂刚
+ */
 public class SsX509TrustManager implements javax.net.ssl.X509TrustManager {
     private ArrayList<X509TrustManager> mX509TrustManagers = new ArrayList<X509TrustManager>();
 

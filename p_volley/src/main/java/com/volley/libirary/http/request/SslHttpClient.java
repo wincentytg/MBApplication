@@ -28,7 +28,10 @@ import khandroid.ext.apache.http.impl.client.DefaultHttpClient;
 import khandroid.ext.apache.http.impl.conn.PoolingClientConnectionManager;
 import khandroid.ext.apache.http.params.HttpParams;
 
-
+/**
+ *
+ * @author 于堂刚
+ */
 public class SslHttpClient extends DefaultHttpClient {
     private static final int HTTP_DEFAULT_PORT = 80;
     private static final String HTTP_SCHEME = "http";

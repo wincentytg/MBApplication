@@ -1,13 +1,16 @@
 package com.volley.libirary.http.request;
 
+import org.apache.http.entity.mime.HttpMultipartMode;
+import org.apache.http.entity.mime.MultipartEntity;
+
 import java.io.FilterOutputStream;
 import java.io.IOException;
 import java.io.OutputStream;
 import java.nio.charset.Charset;
-
-import org.apache.http.entity.mime.HttpMultipartMode;
-import org.apache.http.entity.mime.MultipartEntity;
-
+/**
+ *
+ * @author 于堂刚
+ */
 public class MyMultipartEntity extends MultipartEntity {
 
 	private OnProgressListener mOnProgressListener;

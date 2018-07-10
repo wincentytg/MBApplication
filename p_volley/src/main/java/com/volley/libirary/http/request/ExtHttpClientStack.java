@@ -50,7 +50,10 @@ import khandroid.ext.apache.http.message.BasicNameValuePair;
 import khandroid.ext.apache.http.params.HttpConnectionParams;
 import khandroid.ext.apache.http.params.HttpParams;
 
-
+/**
+ *
+ * @author 于堂刚
+ */
 public class ExtHttpClientStack implements HttpStack {
     protected final HttpClient mClient;
 

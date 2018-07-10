@@ -1,8 +1,5 @@
 package com.volley.libirary.http.request;
 
-import java.io.UnsupportedEncodingException;
-import java.util.Map;
-
 import com.android.volley.AuthFailureError;
 import com.android.volley.NetworkResponse;
 import com.android.volley.Response;
@@ -11,6 +8,12 @@ import com.android.volley.Response.Listener;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.HttpHeaderParser;
 
+import java.io.UnsupportedEncodingException;
+import java.util.Map;
+/**
+ *
+ * @author 于堂刚
+ */
 public class StringRequset extends IRequest<String> {
 
 	public StringRequset(RequestParam param, Listener<String> responseListener,

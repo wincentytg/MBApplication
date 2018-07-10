@@ -1,12 +1,15 @@
 package com.volley.libirary.http.request;
 
+import org.apache.http.protocol.HTTP;
+
 import java.io.File;
 import java.util.ArrayList;
 import java.util.LinkedHashMap;
 import java.util.Map;
-
-import org.apache.http.protocol.HTTP;
-
+/**
+ *
+ * @author 于堂刚
+ */
 public class RequestParam {
 
 	private String mUrl;

@@ -26,7 +26,10 @@ import java.nio.charset.Charset;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
-
+/**
+ *
+ * @author 于堂刚
+ */
 public class MultipartRequest extends IRequest<String> {
 
 	private HttpEntity mEntity;

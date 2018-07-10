@@ -1,20 +1,22 @@
 package com.volleyl.libirary.http;
 
-import java.io.File;
-import java.util.Map;
+import android.os.Handler;
+
+import com.android.volley.Response.ErrorListener;
+import com.android.volley.Response.Listener;
+import com.volley.libirary.http.request.RequestCallBack;
+import com.volley.libirary.http.request.RequestCallBack2;
+import com.volley.libirary.http.request.RequestParam;
 
 import org.json.JSONArray;
 import org.json.JSONObject;
 
-import android.os.Handler;
-
-import com.android.volley.RequestQueue;
-import com.android.volley.Response.ErrorListener;
-import com.android.volley.Response.Listener;
-import com.volley.libirary.http.request.RequestCallBack2;
-import com.volley.libirary.http.request.RequestCallBack;
-import com.volley.libirary.http.request.RequestParam;
-
+import java.io.File;
+import java.util.Map;
+/**
+ *
+ * @author 于堂刚
+ */
 public interface IHttpManager {
 
 	/**

@@ -16,7 +16,10 @@ import org.json.JSONObject;
 import java.io.UnsupportedEncodingException;
 import java.util.HashMap;
 import java.util.Map;
-
+/**
+ *
+ * @author 于堂刚
+ */
 public class JsonObjectBodySessionRequest extends com.android.volley.toolbox.JsonObjectRequest {
 
 	String cookie;
