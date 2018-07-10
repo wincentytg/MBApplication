@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginLeft="15.0dip"
+    android:layout_marginRight="15.0dip"
+    android:background="@drawable/ytx_progress_dialog_white"
+    android:gravity="center"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/ccp_alert_content_view"
+        android:layout_width="fill_parent"
+        android:layout_height="0.0dip"
+        android:layout_weight="1.0"
+        android:gravity="center"
+        android:minHeight="148.0dip"
+        android:orientation="vertical">
+
+        <ProgressBar
+            android:id="@+id/ytx_progress_dialog_icon"
+            style="@style/YuntxMediumCustomProgressBar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ccp_alert_bottom_view"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/ytx_progress_dialog_msg"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:padding="@dimen/LargePadding"
+            android:textColor="@color/black"
+            android:textSize="@dimen/BigTextSize_dip" />
+    </LinearLayout>
+</LinearLayout>

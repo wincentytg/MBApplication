@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">p_common</string>
+    <string name="loading_press">正在提交...</string>
+    <string name="app_search">搜索</string>
+    <string name="app_more">更多</string>
+    <string name="app_back">返回</string>
+    <string name="common_enter_activity">当前所在页面,</string>
+    <string name="str_settext">设置字体大小</string>
+    <string name="app_download_update_package">%s更新包下载</string>
+</resources>

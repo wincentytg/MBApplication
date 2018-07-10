@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <declare-styleable name="AvatarImageView">
+        <attr name="aiv_border_width" format="dimension" />
+        <attr name="aiv_border_color" format="color" />
+    </declare-styleable>
+    <declare-styleable name="VoipButton">
+        <attr name="iconBackground" format="reference" />
+        <attr name="iconBackgroundPressed" format="reference" />
+        <attr name="iconRes" format="reference" />
+        <attr name="iconResPressed" format="reference" />
+        <attr name="iconTip" format="string" />
+    </declare-styleable>
+
+
+    <declare-styleable name="setting_info">
+        <attr name="item_titleText" format="string" />
+        <attr name="item_detailText" format="string" />
+        <attr name="item_content" format="string" />
+        <attr name="item_accessoryType">
+            <enum name="none" value="0" />
+            <enum name="arrow" value="1" />
+            <enum name="switchbutton" value="2" />
+            <enum name="radio" value="3" />
+            <enum name="file" value="4" />
+        </attr>
+        <attr name="item_showDivider" format="boolean" />
+        <attr name="item_avatar" format="reference" />
+        <attr name="item_content_color" format="reference|color" />
+        <attr name="item_title_text_color" format="reference|color" />
+        <attr name="item_checkedtext_color" format="reference|color" />
+    </declare-styleable>
+    <!--设置字体大小控件-->
+    <declare-styleable name="SetTextSizeView">
+        <attr name="lineWidth" format="dimension|reference" />
+        <attr name="lineColor" format="color|reference" />
+        <attr name="totalCount" format="integer" />
+        <attr name="circleColor" format="color|reference" />
+        <attr name="circleRadius" format="dimension|reference" />
+    </declare-styleable>
+    <attr name="attrBgSelectedLetter" format="reference" />
+
+    <declare-styleable name="MyImageView">
+        <attr name="auto_play" format="boolean">
+
+        </attr>
+    </declare-styleable>
+    <declare-styleable name="SubsectionSeekBar">
+        <attr name="max" format="integer" />
+        <attr name="progressvalue" format="integer" />
+        <attr name="dots" format="integer" />
+        <attr name="thumb" format="reference" />
+        <attr name="unProgressLineColor" format="color" />
+        <attr name="unProgressCircleColor" format="color" />
+        <attr name="isDisplay" format="boolean" />
+    </declare-styleable>
+
+
+    <declare-styleable name="RXCombinationAvatarView">
+        <attr name="gap" format="float"/>
+        <attr name="fitType" format="enum">
+            <enum name="FIT" value="0"/>
+            <enum name="CENTER" value="1"/>
+            <enum name="START" value="2"/>
+            <enum name="END" value="3"/>
+        </attr>
+    </declare-styleable>
+</resources>

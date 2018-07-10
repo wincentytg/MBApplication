@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    style="@style/NavPage"
+    >
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_weight="1"
+        android:text="拖动下面更改聊天字体"
+        android:textSize="17sp"
+        android:id="@+id/setting_textshow"
+        android:gravity="center"
+        android:layout_height="0dp" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:background="#fff"
+        android:layout_height="90dp"
+        android:id="@+id/layoutView"
+        >
+
+        <com.ytg.jzy.p_common.view.SetTextSizeView
+            android:layout_marginTop="43dp"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:id="@+id/setting_TextSizeView"
+            app:totalCount="5"
+            app:lineColor="#000"
+            app:circleColor="#fff"
+            app:circleRadius="11dp"
+            app:lineWidth="0.3px"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="A"
+            android:textSize="13sp"
+            android:layout_marginBottom="10dp"
+            android:layout_marginLeft="38dp"
+            android:id="@+id/samll_textsize"
+            android:layout_alignBottom="@id/setting_TextSizeView"
+            android:paddingBottom="20dp"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="标准"
+            android:textSize="17sp"
+            android:layout_marginLeft="38.5dp"
+            android:layout_toRightOf="@id/samll_textsize"
+            android:id="@+id/standard_textsize"
+            android:layout_alignBottom="@id/setting_TextSizeView"
+            android:paddingBottom="30dp"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="A"
+            android:textSize="34sp"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="30.5dp"
+            android:id="@+id/big_textsize"
+            android:layout_alignBottom="@id/setting_TextSizeView"
+            android:paddingBottom="23.5dp"
+            />
+
+
+
+    </RelativeLayout>
+
+</LinearLayout>

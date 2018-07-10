@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="fill_parent"
+        android:layout_height="@dimen/action_bar_height"
+        android:background="@color/action_bar_color"
+        android:fitsSystemWindows="true"
+        android:minHeight="@dimen/action_bar_height"
+        app:theme="@style/YuntxActionBar">
+
+            <ImageView
+                android:id="@+id/ytx_action_first"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingTop="8dp"
+                android:paddingBottom="8dp"
+                android:paddingRight="8dp"
+                android:src="@drawable/ic_arrow_back"
+                android:visibility="gone"/>
+
+        <!--      android:padding="8dp" -->
+            <TextView
+                android:id="@+id/ytx_action_second"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:maxLines="1"
+                android:textColor="@color/ytx_dialog_footer_btn_pos"
+                android:textSize="17.0dip"
+                android:visibility="gone"/>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="center_vertical"
+            android:minHeight="?actionBarSize"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center">
+
+                <TextView
+                    android:id="@+id/ytx_action_title"
+                    android:layout_width="0.0dip"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:ellipsize="end"
+                    android:maxLines="1"
+                    android:layout_weight="1.0"
+                    android:textAppearance="@style/TextAppearance.Widget.AppCompat.Toolbar.Title"
+                    android:textColor="@color/black"
+                    android:textSize="19.0dip" />
+
+                <TextView
+                    android:id="@+id/ytx_action_title_count"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:ellipsize="end"
+                    android:maxLines="1"
+                    android:textAppearance="@style/TextAppearance.Widget.AppCompat.Toolbar.Title"
+                    android:textColor="@color/black"
+                    android:textSize="19.0dip"
+                    android:visibility="gone"/>
+            </LinearLayout>
+            <TextView
+                android:id="@+id/ytx_action_sub_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:textAppearance="@style/TextAppearance.Widget.AppCompat.Toolbar.Subtitle"
+                android:textColor="@color/black"
+                android:textSize="10.0dip"
+                android:visibility="gone" />
+        </LinearLayout>
+    </android.support.v7.widget.Toolbar>
+
+    <View
+        android:id="@+id/toolbar_shadow"
+        android:layout_width="fill_parent"
+        android:layout_height="@dimen/OneDPPadding"
+        android:background="@color/background_color"
+        android:visibility="visible" />
+</LinearLayout>

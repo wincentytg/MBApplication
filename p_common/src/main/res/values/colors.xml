@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
+    <color name="list_divider">#ffdadada</color>
+
+    <color name="white">#FFFFFFFF</color>
+    <color name="red">#ffff3e3e </color>
+    <color name="gray">#ff9a9b9c</color>
+    <color name="black">#ff000000</color>
+    <color name="transparent">#00000000</color>
+    <color name="translucent02">#97000000</color>
+    <color name="navpage">#ffffffff</color>
+    <color name="tab_text_color">#003e70</color>
+    <color name="footer_text_color">#ff7f7f7f</color>
+    <color name="white_color_disable">#7fffffff</color>
+    <color name="list_devider_color">#ffd9d9d9</color>
+    <color name="list_item_normal">#fff2f2f2</color>
+    <color name="actionbar_devider_color">#ff212324</color>
+    <color name="actionbar_selector_color">#4d000000</color>
+    <color name="normal_text_color">#ff353535</color>
+    <color name="ytx_hint_text_color_dark_bg">#ff484c4c</color>
+    <color name="pressed_text_color">#80353535</color>
+    <color name="enabled_text_color">#4d353535</color>
+    <color name="light_text_color">#ffd7d7d7</color>
+    <color name="darkGrey">#848284</color>
+    <color name="x_default_text_color">#ff535353</color>
+    <color name="topbar_text">#ff000000</color>
+    <color name="hint_text_color">#ff999999</color>
+    <color name="highlight">#ffff5454</color>
+    <color name="text_content">#ffa19d94</color>
+    <color name="dialog_background">#fffbf6f2</color>
+    <color name="dialog_divider">#ffe8e0da</color>
+    <color name="dialog_btn_normal">#fffbf6f2</color>
+    <color name="text_desc">#ffbebbb4</color>
+    <color name="text_title">#ff5f5f5f</color>
+    <color name="blue">#ff169aff</color>
+    <color name="dialog_title_color">#ff3cac17</color>
+    <dimen name="DialogTitleTextSize">20.0dip</dimen>
+    <color name="big_line_color">#40000000</color>
+    <color name="small_line_color">#26000000</color>
+    <item name="menu_pressed_color" type="color">@color/small_line_color</item>
+    <color name="devideline_listview">#ffe5e2d4</color>
+    <color name="dialog_item_press">#ffece5df</color>
+    <color name="dialog_btn_press">#ffece5df</color>
+    <color name="bule14">#3300ff</color>
+    <color name="green">#45CD87</color>
+    <color name="text_disabled">#ffa8a8a8</color>
+    <color name="hint_color_white_bg">#ffc5c5c5</color>
+
+    <color name="action_bar_tittle_color">#ffcfcfcf</color>
+    <color name="action_bar_text_color">#ff455a64</color>
+    <color name="status_bar_color">#ffb0bec5</color>
+    <color name="action_bar_color">#ffffffff</color>
+    <color name="search_text_color">#ff263238</color>
+    <color name="white_box_hint_text_color">#ff90a4ae</color>
+    <color name="text_highlight_color">#800288d1</color>
+    <color name="menu_devider_color">#ff191b1c</color>
+    <color name="ytx_plus_menu_bg">#ffe0e0e0</color>
+    <color name="ytx_action_bar_mask">#ffe0e0e0</color>
+    <color name="ytx_dialog_source_color">#ffaaaaaa</color>
+    <color name="ytx_dialog_source_black_color">#df000000</color>
+    <color name="ytx_dialog_footer_btn_nav">#ff808080</color>
+    <color name="ytx_dialog_footer_btn_pos">@color/ytx_color</color>
+    <color name="ytx_dialog_line">#1a000000</color>
+    <color name="ytx_preview">#ffa5db2c</color>
+    <color name="ytx_text_color_press">#bbdefa</color>
+    <color name="ytx_burn_send_color">#f3780b</color>
+
+    <!--三种基本的文字颜色-->
+    <color name="base_text_dark_color">#333333</color>
+    <color name="base_text_middle_color">#666666</color>
+    <color name="base_text_light_color">#999999</color>
+    <color name="background_color">#EEEEEE</color>
+    <color name="base_divider_color">#F5F5F5</color>
+
+    <color name="ytx_red_btn_color_normal">#ffff5454</color>
+    <color name="ytx_red_btn_color_pressed">#ffd24242</color>
+    <color name="ytx_red_btn_color_disable">#7fff5454</color>
+
+    <color name="ytx_white_normal">#4cffffff</color>
+    <color name="ytx_white_pressed">#99ffffff</color>
+    <color name="ytx_white_disable">#ffffffff</color>
+
+    // 应用的统一色
+    <color name="ytx_color">#ff41a0ed</color>
+
+    // 应用统一色对应的三个状态
+    <color name="ytx_color_normal">#ff369bec</color>
+    <color name="ytx_color_pressed">#ff7dc1f7</color>
+    <color name="ytx_color_disable">#ffc4c4c4</color>
+
+    // 应用统一色按钮对应的三个描边颜色
+    <color name="ytx_stroke_disable">#004892ea</color>
+    <color name="ytx_stroke_normal">#ff4892ea</color>
+    <color name="ytx_stroke_pressed">#ff468ee8</color>
+
+    <color name="last_msg_tv_color">#ffaaaaaa</color>
+</resources>

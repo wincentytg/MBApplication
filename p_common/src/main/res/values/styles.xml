@@ -1,0 +1,211 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+    <style name="YTGTheme" parent="@style/Plugin_Theme">
+        <item name="android:textColorHighlight">@color/text_highlight_color</item>
+        <item name="android:textColorHint">@color/white_box_hint_text_color</item>
+        <item name="android:windowActionBar">false</item>
+        <item name="android:actionModeBackground">@color/action_bar_color</item>
+        <item name="android:actionModeCloseDrawable">@drawable/ic_clear_24</item>
+        <item name="android:homeAsUpIndicator">@drawable/ic_arrow_back</item>
+        <item name="actionModeBackground">@color/action_bar_color</item>
+        <item name="actionModeCloseDrawable">@drawable/ic_clear_24</item>
+        <item name="homeAsUpIndicator">@drawable/ic_arrow_back</item>
+        <item name="android:editTextColor">@color/search_text_color</item>
+        <item name="windowActionBar">false</item>
+        <item name="android:windowAnimationStyle">@style/Animation.Activity</item>
+        <item name="windowNoTitle">true</item>
+        <item name="windowActionModeOverlay">true</item>
+        <item name="actionBarStyle">@style/YuntxActionBar</item>
+
+        <item name="colorPrimary">@color/action_bar_color</item>
+        <item name="colorPrimaryDark">@color/action_bar_color</item>
+        <item name="colorAccent">@color/action_bar_color</item>
+        <item name="colorControlNormal">@color/action_bar_text_color</item>
+        <item name="android:textCursorDrawable">@drawable/blue_textfield_cursor</item>
+        <item name="android:fadingEdge">none</item>
+        <item name="android:fadingEdgeLength">0.0dip</item>
+        <item name="popupMenuStyle">@style/YuntxPopupMenuStyle</item>
+    </style>
+    <style name="Animation.Activity" parent="@android:style/Animation.Activity">
+        <item name="android:activityOpenEnterAnimation">@anim/activity_open_enter</item>
+        <item name="android:activityOpenExitAnimation">@anim/activity_open_exit</item>
+        <item name="android:activityCloseEnterAnimation">@anim/activity_close_enter</item>
+        <item name="android:activityCloseExitAnimation">@anim/activity_close_exit</item>
+    </style>
+    <style name="YuntxPopupMenuStyle" parent="@style/Widget.AppCompat.PopupMenu" >
+        <item name="android:popupBackground">@drawable/ytx_ofm_menu_bg</item>
+    </style>
+    <style name="Base_Plugin_Theme" parent="@style/Theme.AppCompat.Light.DarkActionBar" />
+
+    <style name="Plugin_Theme" parent="@style/Base_Plugin_Theme">
+        <item name="android:checkboxStyle">@style/CCPCheckBox</item>
+        <item name="android:buttonStyle">@style/BaseButtonStyle</item>
+        <item name="android:buttonStyleToggle">@style/BaseToggleButtonStyle</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:autoCompleteTextViewStyle">@style/BaseAutoCompleteTextViewStyle</item>
+        <item name="android:editTextStyle">@style/BaseEditTextStyle</item>
+        <item name="android:listViewStyle">@style/BaseListViewStyle</item>
+        <item name="android:radioButtonStyle">@style/BaseRadioButtonStyle</item>
+        <item name="android:textViewStyle">@style/BaseTextViewStyle</item>
+        <item name="android:dialogTheme">@style/BaseDialog</item>
+        <!--
+                <item name="android:windowAnimationStyle">@style/ECAnimation.Activity</item>
+        -->
+        <item name="android:fadingEdge">none</item>
+        <item name="android:fadingEdgeLength">0.0dip</item>
+        <item name="attrBgSelectedLetter">@drawable/icon_list_fastscroll_selected_bg</item>
+    </style>
+    <style name="BaseListViewStyle" parent="@android:style/Widget.ListView">
+        <item name="android:divider">@color/list_divider</item>
+        <item name="android:dividerHeight">@dimen/list_divider_height</item>
+    </style>
+    <style name="BaseTextViewStyle" parent="@android:style/Widget.TextView">
+        <item name="android:textColorLink">@color/bule14</item>
+    </style>
+    <style name="BaseDialog" parent="@android:style/Theme.Dialog" />
+    <style name="BaseRadioButtonStyle" parent="@android:style/Widget.CompoundButton.RadioButton" />
+
+
+    <style name="CCPCheckBox" parent="@android:style/Widget.CompoundButton.CheckBox">
+        <item name="android:background">@drawable/ccp_checkbox_btn</item>
+        <item name="android:button">@null</item>
+    </style>
+    <style name="BaseEditTextStyle" parent="@android:style/Widget.EditText" />
+
+
+    <style name="BaseToggleButtonStyle" parent="@android:style/Widget.Button.Toggle" />
+
+    <style name="BaseAutoCompleteTextViewStyle" parent="@android:style/Widget.AutoCompleteTextView" />
+
+    <style name="BaseButtonStyle" parent="@android:style/Widget.Button" />
+    <!-- dialog按钮的样式 -->
+    <style name="DialogBtnStyle">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">40dp</item>
+        <item name="android:layout_marginLeft">10dip</item>
+        <item name="android:layout_marginRight">10dip</item>
+        <item name="android:background">@null</item>
+        <item name="android:gravity">center_vertical|center_horizontal</item>
+        <item name="android:textColor">#666666</item>
+        <item name="android:textSize">14sp</item>
+    </style>
+
+    <style name="dialog_style" parent="@android:style/Theme.Dialog">
+        <item name="android:windowFrame">@null</item>
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:windowIsTranslucent">false</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+    </style>
+
+    <style name="YuntxMediumCustomProgressBar" parent="@android:style/Widget.ProgressBar">
+        <item name="android:indeterminateDrawable">@drawable/ytx_progress_medium_holo</item>
+    </style>
+
+    <style name="YuntxTipsDialog" parent="@android:style/Theme.Dialog">
+        <item name="android:backgroundDimAmount">0.5</item>
+        <item name="android:windowBackground">@color/transparent</item>
+        <item name="android:windowFrame">@null</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:background">@color/transparent</item>
+        <item name="android:backgroundDimEnabled">true</item>
+    </style>
+
+    <style name="YuntxAlertDialog" parent="@android:style/Theme.Dialog">
+        <item name="android:windowBackground">@color/transparent</item>
+        <item name="android:windowFrame">@null</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:background">@color/transparent</item>
+        <item name="android:backgroundDimEnabled">false</item>
+    </style>
+
+    <style name="YuntxActionBar" parent="@style/ThemeOverlay.AppCompat.ActionBar">
+        <item name="android:actionMenuTextAppearance">@style/YuntxActionBarMenuTextStyle</item>
+        <item name="android:actionMenuTextColor">@color/action_bar_text_color</item>
+        <item name="android:titleTextStyle">@style/YuntxActionBar.TitleTextStyle</item>
+        <item name="android:subtitleTextStyle">@style/YuntxActionBar.SubTitleTextStyle</item>
+        <item name="height">@dimen/action_bar_height</item>
+        <item name="android:actionBarSize">@dimen/action_bar_height</item>
+        <item name="actionBarSize">@dimen/action_bar_height</item>
+        <item name="displayOptions">showTitle</item>
+        <item name="windowActionBarOverlay">true</item>
+        <item name="actionMenuTextColor">@color/action_bar_text_color</item>
+        <item name="searchViewStyle">@style/YuntxTheme.SearchView</item>
+        <item name="titleTextColor">@color/action_bar_text_color</item>
+        <item name="titleTextStyle">@style/YuntxActionBar.TitleTextStyle</item>
+        <item name="subtitleTextStyle">@style/YuntxActionBar.SubTitleTextStyle</item>
+    </style>
+
+    <style name="YuntxTheme.SearchView" parent="@style/Widget.AppCompat.SearchView">
+        <item name="defaultQueryHint">@string/app_search</item>
+        <item name="closeIcon">@drawable/ic_clear_24</item>
+        <item name="searchHintIcon">@null</item>
+        <item name="queryBackground">@color/white</item>
+    </style>
+
+    <style name="YuntxActionBarMenuTextStyle" parent="@style/TextAppearance.AppCompat.Widget.ActionBar.Menu">
+        <item name="android:textSize">@dimen/navigation_text_size</item>
+    </style>
+
+    <style name="YuntxActionBar.TitleTextStyle" parent="@style/TextAppearance.AppCompat.Widget.ActionBar.Title">
+        <item name="android:textSize">@dimen/ActionBarTextSize</item>
+        <item name="android:textColor">@color/action_bar_text_color</item>
+    </style>
+
+    <style name="YuntxActionBar.SubTitleTextStyle" parent="@style/TextAppearance.AppCompat.Widget.ActionBar.Title">
+        <item name="android:textSize">@dimen/SmallTextSize</item>
+        <item name="android:textColor">@color/hint_text_color</item>
+    </style>
+
+    <style name="YuntxSolidGreenSmallButton" parent="@style/CCPSmallButton">
+        <item name="android:textColor">@color/btn_style_text</item>
+        <item name="android:background">@drawable/ytx_btn_style_blue</item>
+    </style>
+
+    <style name="CCPSmallButton">
+        <item name="android:textSize">@dimen/HintTextSize</item>
+        <item name="android:textColor">@color/white_color_selector</item>
+        <item name="android:gravity">center</item>
+        <item name="android:paddingLeft">@dimen/SmallPadding</item>
+        <item name="android:paddingRight">@dimen/SmallPadding</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:minWidth">@dimen/SmallButtonWidth</item>
+        <item name="android:minHeight">@dimen/SmallButtonHeight</item>
+    </style>
+    <style name="NavPage">
+        <item name="android:gravity">center_horizontal</item>
+        <item name="android:orientation">vertical</item>
+        <item name="android:background">@drawable/login_background</item>
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">fill_parent</item>
+    </style>
+    <style name="loadingdialog_style" parent="@android:style/Theme.Dialog">
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowFrame">@null</item>
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowAnimationStyle">@android:style/Animation.Dialog</item>
+        <item name="android:backgroundDimEnabled">true</item>
+        <item name="android:windowSoftInputMode">adjustPan</item>
+    </style>
+    <style name="progressBarHorizontal_color" parent="android:Widget.ProgressBar.Horizontal">
+        <item name="android:indeterminateOnly">false</item>
+        <item name="android:progressDrawable">@drawable/progress_color_horizontal</item>
+        <item name="android:indeterminateDrawable">@drawable/progressbar_color</item>
+        <item name="android:minHeight">5dip</item>
+        <item name="android:maxHeight">5dip</item>
+    </style>
+</resources>
