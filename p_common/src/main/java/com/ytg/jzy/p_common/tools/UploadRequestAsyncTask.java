@@ -15,7 +15,10 @@ import org.json.JSONObject;
 
 import java.io.File;
 import java.util.HashMap;
-
+/**
+ *
+ * @author 于堂刚
+ */
 public class UploadRequestAsyncTask extends AsyncTask<Void, Void, String>
 		implements OnDismissListener {
 	private HashMap<String, Object> mapIMs;

@@ -6,7 +6,8 @@ import com.ytg.jzy.p_common.mvpcore.view.BaseView;
 import java.lang.ref.WeakReference;
 
 /**
- * Created by Tervor on 2016/7/20 0020.
+ *
+ * @author 于堂刚
  */
 public abstract class BasePresenter<V extends BaseView, M extends BaseModel> {
 

@@ -24,7 +24,6 @@ import java.lang.reflect.Method;
 
 /**
  * @author YTG
- * @since 2017/5/8
  */
 public class SystemBarTintManager {
 

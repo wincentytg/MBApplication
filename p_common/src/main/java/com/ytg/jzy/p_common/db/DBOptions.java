@@ -6,6 +6,7 @@ import java.util.ArrayList;
 
 /**
  *不跟任何网络框架有关，但又适用于所有的网络框架，负责传递网络请求的一些配置信息，如需别的方法自行添加即可
+ * * @author 于堂刚
  */
 public class DBOptions<T> {
     public String id;

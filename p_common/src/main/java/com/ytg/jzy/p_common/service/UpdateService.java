@@ -26,7 +26,10 @@ import java.io.InputStream;
 import java.net.HttpURLConnection;
 import java.net.URL;
 
-
+/**
+ *
+ * @author 于堂刚
+ */
 public class UpdateService extends Service {
 
 	private Context context;

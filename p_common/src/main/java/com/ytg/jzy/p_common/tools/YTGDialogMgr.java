@@ -4,7 +4,7 @@ import android.content.Context;
 import android.content.DialogInterface;
 
 import com.ytg.jzy.p_common.dialog.LoadingDialog;
-import com.ytg.jzy.p_common.dialog.RXProgressDialog;
+import com.ytg.jzy.p_common.dialog.YTGProgressDialog;
 
 
 /**
@@ -23,10 +23,10 @@ public class YTGDialogMgr {
      * @param context 上下文
      * @param message 对话框显示文本
      * @param l 对话框取消回调接口
-     * @return RXProgressDialog
+     * @return YTGProgressDialog
      */
-    public static RXProgressDialog showProgress(Context context , String message , DialogInterface.OnCancelListener l) {
-        return showProgress(context, RXProgressDialog.STYLE_DIM_AMOUNT, message, true, l);
+    public static YTGProgressDialog showProgress(Context context , String message , DialogInterface.OnCancelListener l) {
+        return showProgress(context, YTGProgressDialog.STYLE_DIM_AMOUNT, message, true, l);
     }
 
     /**
@@ -35,10 +35,10 @@ public class YTGDialogMgr {
      * @param message 对话框显示文本
      * @param cancelable 对话框是否可以取消
      * @param l 对话框取消回调接口
-     * @return RXProgressDialog
+     * @return YTGProgressDialog
      */
-    public static RXProgressDialog showProgress(Context context , String message , boolean cancelable , DialogInterface.OnCancelListener l) {
-        return showProgress(context, RXProgressDialog.STYLE_HORIZONTAL, message, cancelable, l);
+    public static YTGProgressDialog showProgress(Context context , String message , boolean cancelable , DialogInterface.OnCancelListener l) {
+        return showProgress(context, YTGProgressDialog.STYLE_HORIZONTAL, message, cancelable, l);
     }
 
     /**
@@ -48,10 +48,10 @@ public class YTGDialogMgr {
      * @param message 对话框显示文本
      * @param cancelable 对话框是否可以取消
      * @param l 对话框取消回调接口
-     * @return RXProgressDialog
+     * @return YTGProgressDialog
      */
-    public static RXProgressDialog showProgress(Context context ,int style, String message , boolean cancelable , final DialogInterface.OnCancelListener l) {
-        RXProgressDialog dialog = RXProgressDialog.show(context, message, cancelable, style, new DialogInterface.OnCancelListener() {
+    public static YTGProgressDialog showProgress(Context context , int style, String message , boolean cancelable , final DialogInterface.OnCancelListener l) {
+        YTGProgressDialog dialog = YTGProgressDialog.show(context, message, cancelable, style, new DialogInterface.OnCancelListener() {
 
             @Override
             public void onCancel(DialogInterface dialog) {

@@ -3,7 +3,8 @@ package com.ytg.jzy.p_common.mvpcore.model;
 import com.ytg.jzy.p_common.mvvmcore.BaseLoadListener;
 
 /**
- * Created by Tervor on 2016/7/21 0021.
+ *
+ * @author 于堂刚
  */
 public interface BaseModel<T> {
     /**

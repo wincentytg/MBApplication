@@ -1,5 +1,8 @@
 package com.ytg.jzy.p_common.mvvmcore;
-
+/**
+ *
+ * @author 于堂刚
+ */
 public interface IBaseView<T> {
     /**
      * 开始加载

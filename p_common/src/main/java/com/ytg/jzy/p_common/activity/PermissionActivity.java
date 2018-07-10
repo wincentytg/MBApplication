@@ -17,7 +17,6 @@ import java.util.ArrayList;
  * 权限检测
  *
  * @author YTG
- * @since 2017/3/15
  */
 public class PermissionActivity extends AppCompatActivity {
 

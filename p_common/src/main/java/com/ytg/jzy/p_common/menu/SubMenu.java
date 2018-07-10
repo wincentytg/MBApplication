@@ -15,7 +15,6 @@ package com.ytg.jzy.p_common.menu;
 /**
  * 自定义菜单（图标、文本）
  * @author YTG
- * @since 2017/3/18
  */
 public class SubMenu {
 

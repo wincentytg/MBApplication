@@ -14,7 +14,10 @@ import com.ytg.jzy.p_common.tools.BackwardSupportUtil;
 import com.ytg.jzy.p_common.view.TextDrawable;
 
 import java.util.zip.CRC32;
-
+/**
+ *
+ * @author 于堂刚
+ */
 public class GlideHelper {
     public static final boolean loadLocal=true;
 

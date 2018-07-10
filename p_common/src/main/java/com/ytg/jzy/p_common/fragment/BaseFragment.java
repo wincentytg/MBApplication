@@ -23,7 +23,10 @@ import com.ytg.jzy.p_common.utils.Event;
 import java.util.LinkedHashMap;
 
 import de.greenrobot.event.EventBus;
-
+/**
+ *
+ * @author 于堂刚
+ */
 @SuppressLint("NewApi")
 public abstract class BaseFragment extends Fragment implements OnClickListener {
     protected SharedPreferencesHelper sp;

@@ -4,7 +4,10 @@ import android.app.Activity;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.content.SharedPreferences.Editor;
-
+/**
+ *
+ * @author 于堂刚
+ */
 public class SharedPreferencesHelper {
 
 	public static SharedPreferencesHelper spHelper;

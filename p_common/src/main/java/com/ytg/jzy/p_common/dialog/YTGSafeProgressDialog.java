@@ -8,17 +8,16 @@ import com.ytg.jzy.p_common.utils.LogUtil;
 
 /**
  * @author YTG
- * @since 2017/4/9
  */
-public class RXSafeProgressDialog extends ProgressDialog {
+public class YTGSafeProgressDialog extends ProgressDialog {
 
-    private static final String TAG = "YTG.RXSafeProgressDialog";
+    private static final String TAG = "YTG.YTGSafeProgressDialog";
 
     /**
      * 构造方法
      * @param context 上下文
      */
-    public RXSafeProgressDialog(Context context) {
+    public YTGSafeProgressDialog(Context context) {
         super(context);
     }
 
@@ -27,7 +26,7 @@ public class RXSafeProgressDialog extends ProgressDialog {
      * @param context 上下文
      * @param theme 主题
      */
-    public RXSafeProgressDialog(Context context, int theme) {
+    public YTGSafeProgressDialog(Context context, int theme) {
         super(context, theme);
     }
 

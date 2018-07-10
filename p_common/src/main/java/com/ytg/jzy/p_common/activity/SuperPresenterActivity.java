@@ -11,8 +11,7 @@ import com.ytg.jzy.p_common.mvpcore.view.BaseView;
 /**
  * MVP模式基础类
  *
- * @author
- * @since 2017/3/15
+ * @author 于堂刚
  */
 public abstract class SuperPresenterActivity<V extends BaseView,M extends BaseModel, T extends BasePresenter<V ,M>> extends MCompatActivity implements IBase<V, M,T> {
 

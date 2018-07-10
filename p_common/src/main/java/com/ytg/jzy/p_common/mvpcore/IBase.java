@@ -6,7 +6,8 @@ import com.ytg.jzy.p_common.mvpcore.presenter.BasePresenter;
 import com.ytg.jzy.p_common.mvpcore.view.BaseView;
 
 /**
- * Created by Tervor on 2016/7/21 0021.
+ *
+ * @author 于堂刚
  */
 public interface IBase<V extends BaseView,M extends BaseModel,T extends BasePresenter<V,M>> {
     T getPresenter();

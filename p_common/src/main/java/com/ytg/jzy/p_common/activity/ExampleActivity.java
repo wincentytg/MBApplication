@@ -7,7 +7,10 @@ import android.view.View;
 import com.ytg.jzy.p_common.R;
 import com.ytg.jzy.p_common.mvpcore.presenter.BasePresenter;
 import com.ytg.jzy.p_common.tools.SearchViewHelper;
-
+/**
+ *
+ * @author 于堂刚
+ */
 public class ExampleActivity extends SuperPresenterActivity implements MenuItem.OnMenuItemClickListener{
     @Override
     public int getLayoutId() {

@@ -16,9 +16,9 @@ import com.ytg.jzy.p_common.utils.LogUtil;
 /**
  * @author YTG
  */
-public class RXProgressDialog extends RXSafeProgressDialog {
+public class YTGProgressDialog extends YTGSafeProgressDialog {
 
-    private static final String TAG = "YTG.RXProgressDialog";
+    private static final String TAG = "YTG.YTGProgressDialog";
 
     public static final int STYLE_HORIZONTAL = 0;
     public static final int STYLE_VERTICAL = 1;
@@ -41,7 +41,7 @@ public class RXProgressDialog extends RXSafeProgressDialog {
      * @param theme 主题
      * @param style 对话框模式
      */
-    private RXProgressDialog(Context context , int theme , int style) {
+    private YTGProgressDialog(Context context , int theme , int style) {
         super(context, theme);
         int resource ;
         this.mContext = context;
@@ -70,9 +70,9 @@ public class RXProgressDialog extends RXSafeProgressDialog {
      * @param cancelable 对话框是否可用取消
      * @param style 对话框模式
      * @param listener 对话框取消回调接口
-     * @return RXProgressDialog
+     * @return YTGProgressDialog
      */
-    public static RXProgressDialog create(Context context , CharSequence message ,boolean cancelable , int style ,DialogInterface.OnCancelListener listener){
+    public static YTGProgressDialog create(Context context , CharSequence message , boolean cancelable , int style , DialogInterface.OnCancelListener listener){
         int theme ;
         switch (style) {
             case STYLE_HORIZONTAL:
@@ -85,7 +85,7 @@ public class RXProgressDialog extends RXSafeProgressDialog {
                 break;
         }
 
-        RXProgressDialog dialog = new RXProgressDialog(context, theme, style);
+        YTGProgressDialog dialog = new YTGProgressDialog(context, theme, style);
         dialog.setMessage(message);
         dialog.setCancelable(cancelable);
         dialog.setOnCancelListener(listener);
@@ -100,10 +100,10 @@ public class RXProgressDialog extends RXSafeProgressDialog {
      * @param cancelable 对话框是否可以取消
      * @param style 对话框模式
      * @param listener 对话框取消回调接口
-     * @return RXProgressDialog
+     * @return YTGProgressDialog
      */
-    public static RXProgressDialog show(Context context , CharSequence message ,boolean cancelable , int style ,DialogInterface.OnCancelListener listener){
-        RXProgressDialog dialog = create(context, message, cancelable, style, listener);
+    public static YTGProgressDialog show(Context context , CharSequence message , boolean cancelable , int style , DialogInterface.OnCancelListener listener){
+        YTGProgressDialog dialog = create(context, message, cancelable, style, listener);
         dialog.show();
         return dialog;
     }

@@ -20,7 +20,7 @@ import com.ytg.jzy.p_common.bar.StatusBarCompat;
 import com.ytg.jzy.p_common.db.DBBack;
 import com.ytg.jzy.p_common.db.DBOptions;
 import com.ytg.jzy.p_common.db.MDBManager;
-import com.ytg.jzy.p_common.dialog.RXProgressDialog;
+import com.ytg.jzy.p_common.dialog.YTGProgressDialog;
 import com.ytg.jzy.p_common.menu.ActionMenuItem;
 import com.ytg.jzy.p_common.request.MRequestManager;
 import com.ytg.jzy.p_common.request.RequestBack;
@@ -40,8 +40,7 @@ import de.greenrobot.event.EventBus;
  * 1、提供了对系统ActionBar的基本设置API
  * 2、提供了对ui界面的基本处理
  *
- * @author YTG
- * @since 2017/3/15
+ * @author 于堂刚
  */
 //@ActivityTransition(0)
 public abstract class MCompatActivity extends PermissionActivity {
@@ -50,7 +49,7 @@ public abstract class MCompatActivity extends PermissionActivity {
     /**
      * 正在进行中提示框
      */
-    private RXProgressDialog mPostingDialog;
+    private YTGProgressDialog mPostingDialog;
     private boolean isNotCancleHandle;
     public Context context;
     SharedPreferencesHelper sp;

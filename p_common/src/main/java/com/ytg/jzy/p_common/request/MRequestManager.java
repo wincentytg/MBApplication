@@ -5,6 +5,7 @@ import android.content.Context;
 /**
  * 网络加载类
  * 策略或者静态代理模式，开发者只需要关心RequestManager + RequestOptions
+ * @author 于堂刚
  */
 
 public class MRequestManager<T> {

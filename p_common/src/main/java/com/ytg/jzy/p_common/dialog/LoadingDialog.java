@@ -8,7 +8,10 @@ import android.view.View;
 import android.widget.TextView;
 
 import com.ytg.jzy.p_common.R;
-
+/**
+ *
+ * @author 于堂刚
+ */
 
 public class LoadingDialog extends AlertDialog {
 private TextView mTvLoad;

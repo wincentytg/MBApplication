@@ -15,7 +15,10 @@ import android.widget.TextView;
 import com.ytg.jzy.p_common.R;
 import com.ytg.jzy.p_common.utils.DensityUtil;
 
-
+/**
+ *
+ * @author 于堂刚
+ */
 @SuppressLint("ResourceAsColor") public class BaseDialog extends Dialog {
 
 	private LinearLayout mLayoutContainer, mLayoutBottom;

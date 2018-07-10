@@ -8,7 +8,10 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 
 import java.util.ArrayList;
-
+/**
+ *
+ * @author 于堂刚
+ */
 public abstract class SuperLVAdapter<T> extends BaseAdapter {
 	protected int mIdResource;
 	public Context mContext;

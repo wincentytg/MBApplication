@@ -26,7 +26,6 @@ import com.ytg.jzy.p_common.YTGApplicationContext;
 /**
  * 浮动溢出菜单
  * @author YTG
- * @since 2017/3/18
  */
 public class RXActionMenuItem implements MenuItem{
 

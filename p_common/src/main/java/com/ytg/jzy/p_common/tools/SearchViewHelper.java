@@ -20,7 +20,6 @@ import com.ytg.jzy.p_common.utils.LogUtil;
 
 /**
  * @author YTG
- * @since 2017/4/15
  */
 public class SearchViewHelper {
 

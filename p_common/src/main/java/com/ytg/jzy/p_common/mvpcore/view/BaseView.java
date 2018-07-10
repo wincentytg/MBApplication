@@ -1,5 +1,8 @@
 package com.ytg.jzy.p_common.mvpcore.view;
-
+/**
+ *
+ * @author 于堂刚
+ */
 public interface BaseView<T> {
     void updateUi();
     /**

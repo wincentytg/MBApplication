@@ -10,7 +10,7 @@ import com.ytg.jzy.p_common.R;
 
 /**
  * 单条的dialog
- * @author yl
+ * @author YTG
  *
  */
 public class DialogOnTextView extends BaseDialog {

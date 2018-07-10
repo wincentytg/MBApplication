@@ -17,7 +17,6 @@ import android.view.View;
 
 /**
  * @author YTG
- * @since 2017/3/8
  */
 public class ActionMenuItem {
 
