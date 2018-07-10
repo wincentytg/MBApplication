@@ -1,0 +1,107 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion parent.ext.compileSdkVersion
+    buildToolsVersion parent.ext.buildToolsVersion
+
+    defaultConfig {
+//        applicationId "com.ytg.jzy"
+        minSdkVersion parent.ext.minSdkVersion
+        versionCode parent.ext.versionCode
+        versionName parent.ext.versionName
+        targetSdkVersion parent.ext.targetSdkVersion
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        multiDexEnabled true
+        flavorDimensions "versionCode"
+
+//        ndk {
+//            //根据需要 自行选择添加的对应cpu类型的.so库。
+//            abiFilters 'armeabi'//, 'armeabi-v7a', 'arm64-v8a', 'x86', 'x86_64', 'mips', 'mips64'
+//            // 还可以添加 'x86', 'x86_64', 'mips', 'mips64'
+//        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    sourceSets {
+        main {
+            jniLibs.srcDir 'libs'
+        }
+    }
+    buildTypes {
+        debug {
+//            buildConfigField "boolean", "DEBUG", "true"
+        }
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+//            signingConfig signingConfigs.release
+//            buildConfigField "boolean", "LDEBUG", "false"
+        }
+    }
+    /*签名文件信息*/
+    signingConfigs {
+        release {
+//            storeFile file("smartmrokeystore.keystore") //签名证书文件
+//            storePassword properties.getProperty( 'keyPassword' )         //签名证书密码
+//            keyAlias "smartmro"                 //别名
+//            keyPassword properties.getProperty( 'keyPassword' )           //别名密码
+
+        }
+    }
+    android.applicationVariants.all { variant ->
+        variant.outputs.all {
+
+            if (outputFile != null && outputFile.name.endsWith('.apk')) {
+                if (variant.buildType.name.equals('release')) {
+                    def fileName
+                    def releaseTime = new Date().format("yyyyMMdd")
+                    outputFileName= "MB_V${defaultConfig.versionName}_${releaseTime}" +
+                            "_${variant.productFlavors[0].name}.apk"
+//                    outputFile = new File(outputFile.parent, fileName)
+
+                }
+            }
+            // 删除unaligned apk
+//            if (zipAlign != null) {
+//                zipAlign.doLast {
+//
+//                }
+//            }
+        }
+    }
+    productFlavors {
+        channel_1 {
+            versionCode parent.ext.versionCode
+            versionName parent.ext.versionName
+            applicationId "com.ytg.jzytest"
+            manifestPlaceholders = [lable: "demo", logo: "@mipmap/launcher", package: "com.ytg.jzytest"]
+        }
+    }
+    lintOptions {
+        checkReleaseBuilds false
+        // Or, if you prefer, you can continue to check for errors in release builds,
+        // but continue the build even when errors are found:
+        abortOnError false
+    }
+    dexOptions {
+        dexInProcess true
+        preDexLibraries true
+        javaMaxHeapSize "4g"//越大越好
+    }
+}
+tasks.withType(JavaCompile) { options.encoding = "UTF-8" }
+dependencies {
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    implementation rootProject.ext.dependencies["appcompat_v7"]
+    implementation rootProject.ext.dependencies["constraint_layout"]
+    testImplementation rootProject.ext.dependencies["junit"]
+    implementation rootProject.ext.dependencies["multidex"]
+    androidTestImplementation rootProject.ext.dependencies["runner"]
+    androidTestImplementation rootProject.ext.dependencies["espresso_core"]
+    implementation project(':p_common')
+    implementation project(':p_moduletest')
+    compile project(':libraryrv')
+}
+

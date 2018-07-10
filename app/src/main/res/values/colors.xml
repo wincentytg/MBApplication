@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
+    <color name="red">#f03228</color>
+    <color name="red_light">#fac3be</color>
+    <color name="orange">#FF6400</color>
+    <color name="choose_eara_item_press_color">#f4f4f4</color>
+    <color name="transparent">#00000000</color>
+    <color name="white">#ffffff</color>
+    <color name="black">#000000</color>
+    <color name="gray">#AFAFAF</color>
+    <color name="color_333333">#333333</color>
+    <color name="color_666666">#666666</color>
+    <color name="color_999999">#999999</color>
+    <color name="color_f4f4f4">#f4f4f4</color>
+    <color name="result_view">#b0000000</color>
+    <color name="viewfinder_mask">#60000000</color>
+    <color name="possible_result_points">#c0ffff00</color>
+    <color name="color_c8000f">#c8000f</color>
+    <color name="color_4a65ff">#4a65ff</color>
+    <color name="color_1cccf1">#1cccf1</color>
+    <color name="color_ff9a47">#ff9a47</color>
+    <color name="color_eaeaea">#eaeaea</color>
+    <color name="color_cccccc">#cccccc</color>
+    <color name="color_3000000">#30000000</color>
+    <color name="color_blue">#00B799</color>
+    <color name="color_f2f2f2">#f2f2f2</color>
+    <color name="navpage">#FFE1E8EB</color>
+    <color name="linearLayout_pressed">#ececec</color>
+    <color name="color_FFFAF6">#FFFAF6</color>
+</resources>

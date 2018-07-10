@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+
+    android:orientation="vertical"
+    android:padding="5dp" >
+
+    <ImageView
+        android:id="@+id/content_view_image"
+        android:layout_width="45dip"
+        android:layout_height="45dp"
+        android:src="@mipmap/ic_launcher" />
+
+    <TextView
+        android:id="@+id/content_view_text1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="5dp"
+        android:layout_toRightOf="@id/content_view_image"
+        android:text="准备下载"
+         
+        android:textAppearance="?android:attr/textAppearanceSmall" />
+
+    <ProgressBar
+        android:id="@+id/content_view_progress"
+        style="@style/progressBarHorizontal_color"
+        android:layout_width="fill_parent"
+        android:layout_height="10dip"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/content_view_text1"
+        android:layout_marginLeft="10dip"
+        android:layout_marginTop="10dip"
+        android:layout_toRightOf="@+id/content_view_image"
+        android:indeterminateDrawable="@drawable/progressbar_color"
+        android:max="100" />
+
+</RelativeLayout>

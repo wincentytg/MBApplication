@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/base_activity_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/color_f2f2f2"
+    android:orientation="vertical" >
+
+    <com.ytg.jzy.view.SDSimpleTitleView
+        android:id="@+id/base_title"
+        android:layout_width="fill_parent"
+        android:layout_height="@dimen/title_hight" >
+    </com.ytg.jzy.view.SDSimpleTitleView>
+<View
+    android:layout_width="match_parent"
+    android:layout_height="1dp"
+    android:background="@color/color_999999"/>
+</LinearLayout>
