@@ -1,0 +1,47 @@
+// Top-level build file where you can add configuration options common to all sub-projects/modules.
+apply from: "config.gradle"
+buildscript {
+    
+    repositories {
+        google()
+        jcenter()
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:3.0.1'
+
+        // NOTE: Do not place your application dependencies here; they belong
+        // in the individual module build.gradle files
+    }
+    project.ext {
+        buildToolsVersion = "26.0.0"
+        compileSdkVersion = 26
+        minSdkVersion = 16
+        versionName = "1.0.0"
+        versionCode = 1
+        targetSdkVersion=21
+    }
+}
+allprojects {
+    repositories {
+        jcenter()
+//        maven { url "https://raw.githubusercontent.com/YunzhanghuOpen/redpacket-maven-repo/master/release" }
+        maven { url 'http://www.idescout.com/maven/repo/' }
+        maven{
+            url 'http://localhost:8081/repository/ytg/'
+        }
+        mavenCentral()
+        google()
+    }
+}
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}
+//configurations.all {
+//    resolutionStrategy {
+//        force 'com.android.support:support-v4:27.1.0'
+//    }
+//}
+//configurations {
+//    rongxinimplementation
+//}
