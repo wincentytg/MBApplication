@@ -76,7 +76,7 @@ android {
             versionCode parent.ext.versionCode
             versionName parent.ext.versionName
             applicationId "com.ytg.jzytest"
-            manifestPlaceholders = [lable: "demo", logo: "@mipmap/launcher", package: "com.ytg.jzytest"]
+            manifestPlaceholders = [lable: "demo", logo: "@mipmap/ic_launcher", package: "com.ytg.jzytest"]
         }
     }
     lintOptions {
