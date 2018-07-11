@@ -21,7 +21,7 @@ import java.util.ArrayList;
 public class PermissionActivity extends AppCompatActivity {
 
     public static final String rationaleCameraExternal = "需要访问存储设置、相机、麦克风的权限";
-    public static final String rationale = "需要访问相关权限";
+    public static final String rationale = "需要访问相关权限,请设置开启";
     public static final String rationaleLocation = "需要访问定位的权限";
     public static final String rationaleSDCard = "需要访问存储的权限";
     public static final String rationalePhoneState = "需要访问电话权限";

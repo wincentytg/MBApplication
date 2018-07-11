@@ -102,13 +102,14 @@ public class EasyPermissionsEx {
             if (null == activity) {
                 return;
             }*/
-            DialogOnTextView dialog = new DialogOnTextView(ctx);
+          final DialogOnTextView dialog = new DialogOnTextView(ctx);
             dialog.setDialogMsg(rationale);
             dialog.setTitleGone();
             dialog.setLeftBtn(View.GONE,"",null);
-            dialog.setRightBtn(View.TEXT_ALIGNMENT_VIEW_START, "确定", new View.OnClickListener() {
+            dialog.setRightBtn(View.VISIBLE, "确定", new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
+                    dialog.dismiss();
                     executePermissionsRequest(object, perms, requestCode);
                 }
             });
@@ -222,13 +223,14 @@ public class EasyPermissionsEx {
         } else {
             ctx = ((Fragment) object).getContext();
         }
-        DialogOnTextView dialog = new DialogOnTextView(ctx);
+        final DialogOnTextView dialog = new DialogOnTextView(ctx);
         dialog.setDialogMsg(rationale);
         dialog.setTitleGone();
         dialog.setLeftBtn(View.GONE,"",null);
-        dialog.setRightBtn(View.TEXT_ALIGNMENT_VIEW_START, snackbarAction, new View.OnClickListener() {
+        dialog.setRightBtn(View.VISIBLE, snackbarAction, new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                dialog.dismiss();
                 Intent intent = new Intent(Settings.ACTION_APPLICATION_DETAILS_SETTINGS);
                 Uri uri = Uri.fromParts("package", activity.getPackageName(), null);
                 intent.setData(uri);

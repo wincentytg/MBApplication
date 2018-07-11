@@ -57,6 +57,9 @@ import com.ytg.jzy.p_common.utils.DensityUtil;
 
 	public void setLeftBtn(int visible, String btnText,
 			View.OnClickListener listener) {
+		if(visible == View.GONE){
+			findViewById(R.id.dialogTvBar).setVisibility(View.GONE);
+		}
 		mBtnLeft.setVisibility(visible);
 		mBtnLeft.setText(btnText);
 		mBtnLeft.setOnClickListener(listener);
@@ -64,6 +67,9 @@ import com.ytg.jzy.p_common.utils.DensityUtil;
 
 	public void setRightBtn(int visible, String btnText,
 			View.OnClickListener listener) {
+		if(visible == View.GONE){
+			findViewById(R.id.dialogTvBar).setVisibility(View.GONE);
+		}
 		mBtnRight.setVisibility(visible);
 		mBtnRight.setText(btnText);
 		mBtnRight.setOnClickListener(listener);
