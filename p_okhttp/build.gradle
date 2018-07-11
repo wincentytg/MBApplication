@@ -3,8 +3,6 @@ apply plugin: 'com.android.library'
 android {
     compileSdkVersion parent.ext.compileSdkVersion
     buildToolsVersion parent.ext.buildToolsVersion
-
-
     defaultConfig {
         minSdkVersion parent.ext.minSdkVersion
         versionCode parent.ext.versionCode
@@ -15,7 +13,6 @@ android {
 
     buildTypes {
         debug{}
-
         release {
             consumerProguardFiles 'proguard-rules.pro'
         }

@@ -23,7 +23,7 @@
         android:label="${lable}"
         android:supportsRtl="true"
         android:theme="@style/YTGTheme"
-        tools:replace="android:theme">
+        tools:replace="android:theme,android:icon,android:label">
         <provider
             android:name="android.support.v4.content.FileProvider"
             android:authorities="com.ytg.jzy.fileprovider"
