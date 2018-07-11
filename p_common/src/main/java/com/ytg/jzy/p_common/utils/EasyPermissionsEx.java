@@ -102,19 +102,19 @@ public class EasyPermissionsEx {
             if (null == activity) {
                 return;
             }*/
-          final DialogOnTextView dialog = new DialogOnTextView(ctx);
-            dialog.setDialogMsg(rationale);
-            dialog.setTitleGone();
-            dialog.setLeftBtn(View.GONE,"",null);
-            dialog.setRightBtn(View.VISIBLE, "确定", new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    dialog.dismiss();
-                    executePermissionsRequest(object, perms, requestCode);
-                }
-            });
-            dialog.show();
-
+//          final DialogOnTextView dialog = new DialogOnTextView(ctx);
+//            dialog.setDialogMsg(rationale);
+//            dialog.setTitleGone();
+//            dialog.setLeftBtn(View.GONE,"",null);
+//            dialog.setRightBtn(View.VISIBLE, "确定", new View.OnClickListener() {
+//                @Override
+//                public void onClick(View v) {
+//                    dialog.dismiss();
+//                    executePermissionsRequest(object, perms, requestCode);
+//                }
+//            });
+//            dialog.show();
+            executePermissionsRequest(object, perms, requestCode);
         } else {
             executePermissionsRequest(object, perms, requestCode);
         }
