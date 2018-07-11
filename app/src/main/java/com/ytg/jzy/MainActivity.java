@@ -15,6 +15,7 @@ import com.ytg.jzy.http.ok.RequestOptionRF;
 import com.ytg.jzy.p_common.activity.ExampleActivity;
 import com.ytg.jzy.p_common.activity.PermissionActivity;
 import com.ytg.jzy.p_common.activity.SettingTextSizeActivity;
+import com.ytg.jzy.p_common.bar.StatusBarCompat;
 import com.ytg.jzy.p_common.db.DBBack;
 import com.ytg.jzy.p_common.db.MDBManager;
 import com.ytg.jzy.p_common.request.MRequestManager;
@@ -64,6 +65,7 @@ public class MainActivity extends BaseActivity {
                 mSwitchBtn.toggle();
             }
         });
+        StatusBarCompat.setStatusBarColor(this, getResources().getColor(com.ytg.jzy.p_common.R.color.action_bar_color));
         mSystemBarTintManager = new SystemBarTintManager(this);
         ((TextView) findViewById(R.id.mTvActionBar)).setText(
                 "StatusBarHeight:" + mSystemBarTintManager.getConfig().getStatusBarHeight() +
