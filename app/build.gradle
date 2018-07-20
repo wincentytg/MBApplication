@@ -102,6 +102,5 @@ dependencies {
     androidTestImplementation rootProject.ext.dependencies["espresso_core"]
     implementation project(':p_common')
     implementation project(':p_moduletest')
-    compile project(':libraryrv')
 }
 

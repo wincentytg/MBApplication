@@ -11,6 +11,12 @@ android {
         versionName parent.ext.versionName
         multiDexEnabled true
         flavorDimensions "versionCode"
+        javaCompileOptions {//Arouter
+            annotationProcessorOptions {
+                arguments = [ moduleName : project.getName() ]
+            }
+        }
+
 //        ndk {
 //            //根据需要 自行选择添加的对应cpu类型的.so库。
 //            abiFilters 'armeabi'//, 'armeabi-v7a', 'arm64-v8a', 'x86', 'x86_64', 'mips', 'mips64'
@@ -61,8 +67,7 @@ dependencies {
     androidTestImplementation rootProject.ext.dependencies["runner"]
     androidTestImplementation rootProject.ext.dependencies["espresso_core"]
     compile rootProject.ext.dependencies["pinyin4j"]
-//    compile rootProject.ext.dependencies["recyclerview-v7"]
-
+    //    compile rootProject.ext.dependencies["recyclerview-v7"]
     implementation project(':p_volley')
     implementation project(':p_db')
     compile files('libs/eventbus.jar')
@@ -74,6 +79,11 @@ dependencies {
     }
     compile project(':p_db')
     compile project(':p_retrofit_rx')
+    if (rootProject.ext.useArouter) {
+        compile rootProject.ext.dependencies["arouter_api"]
+        annotationProcessor rootProject.ext.dependencies["arouter_compiler"]
+    }
+    compile project(':libraryrv')
 }
 uploadArchives {
     configuration = configurations.archives

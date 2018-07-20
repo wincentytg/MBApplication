@@ -7,6 +7,7 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.alibaba.android.arouter.launcher.ARouter;
 import com.ytg.jzy.db.DBManager;
 import com.ytg.jzy.db.Options;
 import com.ytg.jzy.http.ok.MRXmanager;
@@ -49,6 +50,7 @@ public class MainActivity extends BaseActivity {
     SystemBarTintManager mSystemBarTintManager;
     ImageView mIvHead;
     protected RecyclerView mRecyler;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -83,6 +85,7 @@ public class MainActivity extends BaseActivity {
         progressDeterminate.setMax(100);
         progressDeterminate.setProgress(50);
         findViewById(R.id.mTvsetsize).setOnClickListener(this);
+        findViewById(R.id.mBtnArouter).setOnClickListener(this);
 //加载动画
 //        YTGDialogMgr.showProgress(this, "对话框",true, new DialogInterface.OnCancelListener() {
 //            @Override
@@ -121,19 +124,16 @@ public class MainActivity extends BaseActivity {
 //        MRequestManager.getInstance().setsRequestCancle(MVolleymanager.getInstance());
         MDBManager.getInstance().setDBLoader(DBManager.getInstance());//初始化数据库操作的的策略
 
-
-//Test test;跳转到model的activity
-//        startActivity(new Intent(this,TestActivity.class));
         findViewById(R.id.mBtnlog).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 mLoadingDialog.show();
                 LinkedHashMap<String, String> map = new LinkedHashMap<>();
 
-                map.put("api","login");
-                map.put("userMobile","13356399629");
-                map.put("userPassword","123123");
-                map.put("sign",initSign(map));
+                map.put("api", "login");
+                map.put("userMobile", "13356399629");
+                map.put("userPassword", "123123");
+                map.put("sign", initSign(map));
 
                 MRequestManager.getInstance().loadOptions(context, new RequestOptionRF("loginin")
                                 .setParamsMap(map)
@@ -161,7 +161,8 @@ public class MainActivity extends BaseActivity {
             }
         });
     }
-    void requestTest(){
+
+    void requestTest() {
 
 
         LinkedHashMap<String, String> map = new LinkedHashMap<>();
@@ -193,7 +194,7 @@ public class MainActivity extends BaseActivity {
 
                 });
 
-        handleDbData(new Options("id",Options.Method.insertData), new DBBack() {
+        handleDbData(new Options("id", Options.Method.insertData), new DBBack() {
             @Override
             public void onFail(Object obj) {
 
@@ -206,17 +207,17 @@ public class MainActivity extends BaseActivity {
         });
     }
 
-    String salt="jxgk753";
+    String salt = "jxgk753";
 
-    String initSign(LinkedHashMap<String, String> mParams){
+    String initSign(LinkedHashMap<String, String> mParams) {
         if (mParams != null && mParams.size() != 0) {
             StringBuffer buffer = new StringBuffer(salt);
 
             Iterator var3 = mParams.entrySet().iterator();
 
-            while(var3.hasNext()) {
-                Map.Entry<String, String> entry = (Map.Entry)var3.next();
-                String key = (String)entry.getKey();
+            while (var3.hasNext()) {
+                Map.Entry<String, String> entry = (Map.Entry) var3.next();
+                String key = (String) entry.getKey();
                 Object value = entry.getValue();
                 if (key != null && value != null) {
                     buffer.append(key).append(value);
@@ -228,6 +229,7 @@ public class MainActivity extends BaseActivity {
         }
         return "";
     }
+
     public static String md5Password(String password) {
 
         try {
@@ -254,6 +256,7 @@ public class MainActivity extends BaseActivity {
         }
 
     }
+
     @Override
     protected void initViews() {
 
@@ -277,6 +280,12 @@ public class MainActivity extends BaseActivity {
                 break;
             case R.id.mTvactivity:
                 startActivity(new Intent(context, ExampleActivity.class));
+                break;
+            case R.id.mBtnArouter:
+
+//Test test;跳转到model的activity
+//        startActivity(new Intent(this,TestActivity.class));
+                ARouter.getInstance().build("/com/test/TestActivity").navigation();
                 break;
         }
     }
