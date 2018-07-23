@@ -285,7 +285,7 @@ public class MainActivity extends BaseActivity {
 
 //Test test;跳转到model的activity
 //        startActivity(new Intent(this,TestActivity.class));
-                ARouter.getInstance().build("/com/test/TestActivity").navigation();
+                ARouter.getInstance().build("/TestActivity/module/").navigation();
                 break;
         }
     }

@@ -84,6 +84,7 @@ dependencies {
         annotationProcessor rootProject.ext.dependencies["arouter_compiler"]
     }
     compile project(':libraryrv')
+
 }
 uploadArchives {
     configuration = configurations.archives
