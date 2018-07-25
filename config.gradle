@@ -47,7 +47,7 @@ ext{
             //日志拦截器
             "logging-interceptor"            : 'com.squareup.okhttp3:logging-interceptor:3.4.1',
             //暂时没用上
-            "rxbinding2"                     : 'com.jakewharton.rxbinding2:rxbinding:2.1.0',
+            "rxbinding2"                     : 'com.jakewharton.rxbinding2:rxbinding:2.1.1',
             //日志
             "logger"                         : 'com.orhanobut:logger:2.1.1',
             //6.0权限管理

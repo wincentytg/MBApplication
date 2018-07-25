@@ -36,16 +36,21 @@
                 android:resource="@xml/file_paths" />
         </provider>
         <activity android:name=".MainActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
         <activity android:name=".activity.LoginActivity">
 
 
         </activity>
+        <activity android:name=".activity.LogInMVVMActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+
+        </activity>
+
         <!--<activity android:name="com.ytg.jzy.p_common.activity.PermissionActivity"></activity>-->
 
     </application>

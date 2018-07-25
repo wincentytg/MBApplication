@@ -23,6 +23,9 @@ android {
 //            // 还可以添加 'x86', 'x86_64', 'mips', 'mips64'
 //        }
     }
+    dataBinding {
+        enabled = true
+    }
     buildTypes {
         debug{}
 
@@ -54,6 +57,7 @@ android {
     dexOptions {
         incremental true
     }
+
 }
 
 dependencies {
@@ -84,7 +88,7 @@ dependencies {
         annotationProcessor rootProject.ext.dependencies["arouter_compiler"]
     }
     compile project(':libraryrv')
-
+//    compile rootProject.ext.dependencies["rxbinding2"]
 }
 uploadArchives {
     configuration = configurations.archives

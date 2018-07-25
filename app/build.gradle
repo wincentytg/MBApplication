@@ -95,6 +95,9 @@ android {
         preDexLibraries true
         javaMaxHeapSize "4g"//越大越好
     }
+    dataBinding {
+        enabled = true
+    }
 }
 tasks.withType(JavaCompile) { options.encoding = "UTF-8" }
 dependencies {
