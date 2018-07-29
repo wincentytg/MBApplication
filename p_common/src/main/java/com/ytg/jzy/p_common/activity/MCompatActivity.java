@@ -31,6 +31,7 @@ import com.ytg.jzy.p_common.tools.SearchViewHelper;
 import com.ytg.jzy.p_common.utils.Event;
 import com.ytg.jzy.p_common.utils.LogUtil;
 
+import java.lang.ref.WeakReference;
 import java.util.LinkedHashMap;
 
 import de.greenrobot.event.EventBus;
@@ -52,6 +53,7 @@ public abstract class MCompatActivity extends PermissionActivity {
     private YTGProgressDialog mPostingDialog;
     private boolean isNotCancleHandle;
     public Context context;
+//    WeakReference<MCompatActivity> context;
     SharedPreferencesHelper sp;
     public ActivityBase mBaseActivity = new ActivityBase() {
         @Override
@@ -119,7 +121,7 @@ public abstract class MCompatActivity extends PermissionActivity {
             });
         }
 
-        context = this;
+        context = new WeakReference<MCompatActivity>(this).get();
         sp = YTGApplicationContext.sp;
 
         EventBus.getDefault().register(this);
