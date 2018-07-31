@@ -15,6 +15,9 @@
     <!-- GPS定位权限 -->
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_DOWNLOAD_MANAGER"/>
+    <!--VISIBILITY_HIDDEN表示不显示任何通知栏提示的权限-->
+    <uses-permission android:name="android.permission.DOWNLOAD_WITHOUT_NOTIFICATION"/>
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -29,7 +32,7 @@
         </activity>
         <activity android:name="com.ytg.jzy.p_common.activity.SettingTextSizeActivity"></activity>
         <activity android:name="com.ytg.jzy.p_common.activity.ExampleActivity"></activity>
-
+        <service android:name="com.ytg.jzy.p_common.service.DownloadService"></service>
     </application>
 
 </manifest>
