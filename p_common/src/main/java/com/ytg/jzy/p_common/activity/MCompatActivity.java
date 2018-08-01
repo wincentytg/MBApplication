@@ -3,6 +3,10 @@ package com.ytg.jzy.p_common.activity;
 
 import android.app.Activity;
 import android.content.Context;
+import android.net.ConnectivityManager;
+import android.net.Network;
+import android.net.NetworkRequest;
+import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.DrawableRes;
 import android.support.annotation.Nullable;
@@ -24,12 +28,13 @@ import com.ytg.jzy.p_common.dialog.YTGProgressDialog;
 import com.ytg.jzy.p_common.menu.ActionMenuItem;
 import com.ytg.jzy.p_common.request.MRequestManager;
 import com.ytg.jzy.p_common.request.RequestBack;
-import com.ytg.jzy.p_common.tools.SharedPreferencesHelper;
-import com.ytg.jzy.p_common.tools.YTGDialogMgr;
 import com.ytg.jzy.p_common.tools.ActivityBase;
 import com.ytg.jzy.p_common.tools.SearchViewHelper;
+import com.ytg.jzy.p_common.tools.SharedPreferencesHelper;
+import com.ytg.jzy.p_common.tools.YTGDialogMgr;
 import com.ytg.jzy.p_common.utils.Event;
 import com.ytg.jzy.p_common.utils.LogUtil;
+import com.ytg.jzy.p_common.utils.NetWorkUtils;
 
 import java.lang.ref.WeakReference;
 import java.util.LinkedHashMap;
@@ -53,7 +58,7 @@ public abstract class MCompatActivity extends PermissionActivity {
     private YTGProgressDialog mPostingDialog;
     private boolean isNotCancleHandle;
     public Context context;
-//    WeakReference<MCompatActivity> context;
+    //    WeakReference<MCompatActivity> context;
     SharedPreferencesHelper sp;
     public ActivityBase mBaseActivity = new ActivityBase() {
         @Override
@@ -97,6 +102,7 @@ public abstract class MCompatActivity extends PermissionActivity {
         }
     };
 
+
     @Override
     public void onContentChanged() {
         super.onContentChanged();
@@ -108,7 +114,7 @@ public abstract class MCompatActivity extends PermissionActivity {
         if (!allowPlenaryContentView()) {
             // 不需要帮忙初始化标题栏
             LogUtil.e(TAG, "can not initBaseIp activity");
-        }else {
+        } else {
             mBaseActivity.init(getBaseContext(), this);
 
             // 默认设置返回按键
@@ -128,13 +134,48 @@ public abstract class MCompatActivity extends PermissionActivity {
         initViews();
         setListener();
         initContent();
-
+        initNetworkInfoLis();
     }
+
+    /**
+     * 初始化网络链接状态的监听 ，在没网络的时候提供更好的交互
+     */
+    void initNetworkInfoLis() {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            ConnectivityManager connectivityManager = (ConnectivityManager) getApplicationContext().getSystemService(Context.CONNECTIVITY_SERVICE);
+            connectivityManager.requestNetwork(new NetworkRequest.Builder().
+                    build(), new ConnectivityManager.NetworkCallback() {
+                @Override
+                public void onAvailable(Network network) {
+                    super.onAvailable(network);
+//                LogUtil.i("网络链接"+ NetWorkUtils.ping());
+                    Event event = new Event();
+                    if (NetWorkUtils.ping()) {
+                        event.setmIntTag(Event.NET_WORK_STATE_CONNNECTED);
+                    } else {
+                        event.setmIntTag(Event.NET_WORK_STATE_DISCONNNECT);
+                    }
+                    postEvent(event);
+                }
+
+                @Override
+                public void onLost(Network network) {
+                    super.onLost(network);
+//                LogUtil.i("网络断开"+NetWorkUtils.ping());
+                    Event event = new Event();
+                    event.setmIntTag(Event.NET_WORK_STATE_DISCONNNECT);
+                    postEvent(event);
+                }
+            });
+        }
+    }
+
     protected abstract void initViews();
 
     protected abstract void setListener();
 
     protected abstract void initContent();
+
     /**
      * 发送event事件
      *
@@ -155,11 +196,17 @@ public abstract class MCompatActivity extends PermissionActivity {
 //			Utils.onDestroyEmmService(this);
                 finish();
                 break;
-
+            case Event.NET_WORK_STATE_CONNNECTED:
+                mBaseActivity.setNetworkInfoStatus(true);
+                break;
+            case Event.NET_WORK_STATE_DISCONNNECT:
+                mBaseActivity.setNetworkInfoStatus(false);
+                break;
             default:
                 break;
         }
     }
+
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         if (mBaseActivity.onCreateOptionsMenu(menu)) {
@@ -210,6 +257,7 @@ public abstract class MCompatActivity extends PermissionActivity {
         super.finish();
         overridePendingTransition(0, 0);
     }
+
     @Override
     public boolean dispatchTouchEvent(MotionEvent ev) {
         // TODO Auto-generated method stub

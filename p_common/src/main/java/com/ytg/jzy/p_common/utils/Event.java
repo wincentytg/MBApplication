@@ -28,7 +28,14 @@ public class Event extends EventBus {
 	}
 
 	public static final int LOG_OUT = 1;
-
+    /**
+     * 网络链接
+     */
+	public static final int NET_WORK_STATE_CONNNECTED = 2;
+    /**
+     * 网络断开
+     */
+	public static final int NET_WORK_STATE_DISCONNNECT = 3;
 	private EventTag tag;
 	private int mIntTag;
 	private int id;

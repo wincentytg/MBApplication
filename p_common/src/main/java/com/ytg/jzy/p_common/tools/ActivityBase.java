@@ -99,7 +99,7 @@ public abstract class ActivityBase {
 
     /**
      * 左侧第一按钮
-     * */
+     */
     private ImageView mFirstLeftBtnIv;
 
     /**
@@ -120,6 +120,10 @@ public abstract class ActivityBase {
      * 一级标题
      */
     private TextView mTitleView;
+    /**
+     * 网络链接断开时候展示
+     */
+    private TextView mTvNetworkInfo;
     /**
      * 二级标题
      */
@@ -209,6 +213,7 @@ public abstract class ActivityBase {
             mActionBarLayout = mLayoutInflater.inflate(R.layout.ytx_recycler_view_toolbar, null);
             Toolbar toolbar = (Toolbar) mActionBarLayout.findViewById(R.id.toolbar);
             mTitleView = (TextView) mActionBarLayout.findViewById(R.id.ytx_action_title);
+            mTvNetworkInfo = (TextView) mActionBarLayout.findViewById(R.id.mTvNetworkInfo);
             mSubTitleView = (TextView) mActionBarLayout.findViewById(R.id.ytx_action_sub_title);
             mTitleSummaryView = (TextView) mActionBarLayout.findViewById(R.id.ytx_action_title_count);
             mActionBarShadow = mActionBarLayout.findViewById(R.id.toolbar_shadow);
@@ -244,6 +249,15 @@ public abstract class ActivityBase {
             mSmallPadding = mActionBarActivity.getResources().getDimensionPixelSize(R.dimen.SmallPadding);
         }
         onPreDealWithContentViewAttach(mBaseLayoutView);
+    }
+
+    public void setNetworkInfoStatus(boolean isConnected) {
+        if (isConnected) {
+            mTvNetworkInfo.setVisibility(View.GONE);
+        } else {
+            mTvNetworkInfo.setVisibility(View.VISIBLE);
+        }
+
     }
 
 
@@ -940,6 +954,7 @@ public abstract class ActivityBase {
             }
         }
     }
+
     // 判定是否需要隐藏
     public boolean isHideInput(View v, MotionEvent ev) {
         if (v != null && (v instanceof EditText)) {
@@ -956,6 +971,7 @@ public abstract class ActivityBase {
         }
         return false;
     }
+
     /**
      * 隐藏键盘
      */
@@ -1037,13 +1053,13 @@ public abstract class ActivityBase {
      *
      * @param summary 补充文字
      */
-    public  final void setActionBarSupplementTitle(CharSequence summary) {
+    public final void setActionBarSupplementTitle(CharSequence summary) {
         if (isActionBarTitleMiddle()) {
-            if(summary == null || summary.length() == 0) {
+            if (summary == null || summary.length() == 0) {
                 mTitleSummaryView.setVisibility(View.GONE);
-                return ;
+                return;
             }
-            TextUtil.setChangeTextViewSize(mTitleSummaryView ,19);
+            TextUtil.setChangeTextViewSize(mTitleSummaryView, 19);
             mTitleSummaryView.setText(summary);
             mTitleSummaryView.setVisibility(View.VISIBLE);
             if (mActionBar != null) mActionBar.setDisplayShowTitleEnabled(false);
@@ -1054,9 +1070,9 @@ public abstract class ActivityBase {
      * 设置左侧第一个按钮
      *
      * @param
-     * @param  listener
+     * @param listener
      */
-    public final void setFirstButtonLeftInfo(@DrawableRes int resId, View.OnClickListener listener){
+    public final void setFirstButtonLeftInfo(@DrawableRes int resId, View.OnClickListener listener) {
         if (mActionBar == null || mFirstLeftBtnIv == null) {
             return;
         }
@@ -1068,10 +1084,10 @@ public abstract class ActivityBase {
     /**
      * 设置左侧第二个按钮
      *
-     * @param  name
-     * @param  listener
+     * @param name
+     * @param listener
      */
-    public final void setSecondButtonLeftInfo(String name,View.OnClickListener listener) {
+    public final void setSecondButtonLeftInfo(String name, View.OnClickListener listener) {
         if (mActionBar == null || mSecondLeftBtnTv == null) {
             return;
         }
@@ -1112,7 +1128,7 @@ public abstract class ActivityBase {
      *
      * @return 旧版本的ActionBar
      */
-    public  final ActionBar getActionBar() {
+    public final ActionBar getActionBar() {
         return mActionBar;
     }
 
@@ -1125,7 +1141,7 @@ public abstract class ActivityBase {
     private void onBuildActionBarTitle(CharSequence title, ActionBar bar) {
 
         if (isActionBarTitleMiddle()) {
-            TextUtil.setChangeTextViewSize(mTitleView ,19);
+            TextUtil.setChangeTextViewSize(mTitleView, 19);
             mTitleView.setText(title);
             mTitleView.setVisibility(View.VISIBLE);
             if (mActionBar != null) mActionBar.setDisplayShowTitleEnabled(false);

@@ -559,7 +559,23 @@ public class NetWorkUtils {
         }
         return imei;
     }
+    /**
+     * 判断当前的网络连接状态是否能用 比如一些需要登录的网络连接上没登录依然没法上网，
+     * 找一个一定可以访问的ping一下就行了，这里以 www.baidu.com做参考。
+     * return 0可用   其他值不可用
+     */
+    public static boolean ping() {
 
+        Runtime runtime = Runtime.getRuntime();
+        try {
+            Process p = runtime.exec("ping -c 3 www.baidu.com");
+            int ret = p.waitFor();
+            return ret==0;
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return false;
+    }
     public static String getPhoneImsi(Context context) {
         TelephonyManager mTelephonyMgr = (TelephonyManager) context.getSystemService(Context.TELEPHONY_SERVICE);
         return mTelephonyMgr.getSubscriberId();
