@@ -5,6 +5,7 @@ import android.util.Log;
 
 import com.ytg.jzy.R;
 import com.ytg.jzy.p_common.activity.SuperPresenterActivity;
+import com.ytg.jzy.p_common.utils.Event;
 import com.ytg.jzy.presenter.LogInContract;
 
 public class LoginActivity extends SuperPresenterActivity<LogInContract.IView, LogInContract.IModel, LogInContract.LogInPresenter> implements LogInContract.IView {
@@ -30,6 +31,20 @@ public class LoginActivity extends SuperPresenterActivity<LogInContract.IView, L
 
     }
 
+    @Override
+    public void onEventMainThread(Event event) {
+        super.onEventMainThread(event);
+        switch (event.getmIntTag()) {
+            case Event.NET_WORK_STATE_CONNNECTED:
+//
+                break;
+            case Event.NET_WORK_STATE_DISCONNNECT:
+//
+                break;
+            default:
+                break;
+        }
+    }
 
     @Override
     public int getLayoutId() {
