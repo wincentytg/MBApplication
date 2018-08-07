@@ -2,6 +2,8 @@ package com.ytg.jzy;
 
 import com.alibaba.android.arouter.launcher.ARouter;
 import com.ytg.jzy.p_common.YTGApplication;
+import com.ytg.jzy.p_common.servicefac.ServiceFactory;
+import com.ytg.jzy.servicedata.AccountService;
 
 
 /**
@@ -19,7 +21,8 @@ public class BaseApplication extends YTGApplication {
     public void onCreate() {
         super.onCreate();
         mApplication = this;
-
+        // 将 AccountService 类的实例注册到 ServiceFactory
+        ServiceFactory.getInstance().setAccountService(new AccountService());
         initArouter();
     }
 

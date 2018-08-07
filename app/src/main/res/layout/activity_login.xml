@@ -6,66 +6,81 @@
             name="viewModel"
             type="com.ytg.jzy.vm.LoginViewModel" />
     </data>
-<android.support.constraint.ConstraintLayout
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/activity_login"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent">
+     <LinearLayout
+         android:layout_width="match_parent"
+         android:layout_height="wrap_content"
+         android:orientation="vertical">
+         <Button
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:text="点击"
+             binding:onClickCommand="@{viewModel.loginOnClickCommand}"/>
+         <android.support.constraint.ConstraintLayout
+             xmlns:app="http://schemas.android.com/apk/res-auto"
+             xmlns:tools="http://schemas.android.com/tools"
+             android:id="@+id/activity_login"
+       android:layout_width="match_parent"
+             android:layout_height="match_parent">
 
 
-    <android.support.constraint.Guideline
-        android:id="@+id/guideline3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.5" />
+             <android.support.constraint.Guideline
+                 android:id="@+id/guideline3"
+                 android:layout_width="wrap_content"
+                 android:layout_height="wrap_content"
+                 android:orientation="vertical"
+                 app:layout_constraintGuide_percent="0.5" />
 
-    <android.support.constraint.Guideline
-        android:id="@+id/guideline4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_begin="207dp" />
+             <android.support.constraint.Guideline
+                 android:id="@+id/guideline4"
+                 android:layout_width="wrap_content"
+                 android:layout_height="wrap_content"
+                 android:orientation="horizontal"
+                 app:layout_constraintGuide_begin="207dp" />
 
-    <Button
-        android:id="@+id/button6"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="24dp"
-        android:layout_marginRight="24dp"
-        android:text="Button"
-        app:layout_constraintEnd_toStartOf="@+id/guideline3"
-        app:layout_constraintTop_toTopOf="@+id/guideline4" />
+             <Button
+                 android:id="@+id/button6"
+                 android:layout_width="wrap_content"
+                 android:layout_height="wrap_content"
+                 android:layout_marginTop="8dp"
+                 android:layout_marginEnd="24dp"
+                 android:layout_marginRight="24dp"
+                 android:text="Button"
+                 binding:onClickCommand="@{viewModel.loginOnClickCommand}"
+                 app:layout_constraintEnd_toStartOf="@+id/guideline3"
+                 app:layout_constraintTop_toTopOf="@+id/guideline4" />
 
-    <EditText
-        android:id="@+id/button7"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="28dp"
-        android:layout_marginLeft="28dp"
-        android:text="@={viewModel.userName}"
-        app:layout_constraintStart_toStartOf="@+id/guideline3"
-        app:layout_constraintTop_toTopOf="@+id/button6" />
+             <EditText
+                 android:id="@+id/button7"
+                 android:layout_width="wrap_content"
+                 android:layout_height="wrap_content"
+                 android:layout_marginStart="28dp"
+                 android:layout_marginLeft="28dp"
+                 android:text="@={viewModel.userName}"
+                 app:layout_constraintStart_toStartOf="@+id/guideline3"
+                 app:layout_constraintTop_toTopOf="@+id/button6" />
 
-    <android.support.constraint.Guideline
-        android:id="@+id/guideline5"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_begin="20dp" />
+             <android.support.constraint.Guideline
+                 android:id="@+id/guideline5"
+                 android:layout_width="wrap_content"
+                 android:layout_height="wrap_content"
+                 android:orientation="horizontal"
+                 app:layout_constraintGuide_begin="20dp" />
 
-    <TextView
-        android:id="@+id/textView3"
-        android:layout_width="385dp"
-        android:layout_height="142dp"
-        android:background="#765"
-        android:gravity="center"
-        android:text="Banner"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        tools:layout_constraintDimensionRatio="16:6"
-        tools:layout_editor_absoluteY="28dp" />
-</android.support.constraint.ConstraintLayout>
+             <TextView
+                 android:id="@+id/textView3"
+                 android:layout_width="385dp"
+                 android:layout_height="142dp"
+                 android:background="#765"
+                 android:gravity="center"
+                 android:text="Banner"
+                 app:layout_constraintLeft_toLeftOf="parent"
+                 app:layout_constraintRight_toRightOf="parent"
+                 tools:layout_constraintDimensionRatio="16:6"
+                 tools:layout_editor_absoluteY="28dp" />
+         </android.support.constraint.ConstraintLayout>
+
+     </LinearLayout>
+
+
+
 </layout>

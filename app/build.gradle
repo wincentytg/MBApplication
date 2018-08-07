@@ -34,6 +34,16 @@ android {
             jniLibs.srcDir 'libs'
         }
     }
+    /*签名文件信息 要写在buildTypes上边*/
+    signingConfigs {
+        release {
+            storeFile file("smartmrokeystore.keystore") //签名证书文件
+            storePassword "smartmro"         //签名证书密码
+            keyAlias "smartmro"                 //别名
+            keyPassword "smartmro"           //别名密码
+
+        }
+    }
     buildTypes {
         debug {
 //            buildConfigField "boolean", "DEBUG", "true"
@@ -41,20 +51,11 @@ android {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
-//            signingConfig signingConfigs.release
+            signingConfig signingConfigs.release
 //            buildConfigField "boolean", "LDEBUG", "false"
         }
     }
-    /*签名文件信息*/
-    signingConfigs {
-        release {
-//            storeFile file("smartmrokeystore.keystore") //签名证书文件
-//            storePassword properties.getProperty( 'keyPassword' )         //签名证书密码
-//            keyAlias "smartmro"                 //别名
-//            keyPassword properties.getProperty( 'keyPassword' )           //别名密码
 
-        }
-    }
     android.applicationVariants.all { variant ->
         variant.outputs.all {
 
@@ -109,7 +110,10 @@ dependencies {
     androidTestImplementation rootProject.ext.dependencies["runner"]
     androidTestImplementation rootProject.ext.dependencies["espresso_core"]
     implementation project(':p_common')
-    implementation project(':p_moduletest')
+    if(!moduleTestIsModule) {
+        runtimeOnly project(':p_moduletest')
+//代码隔离 Gradle 3.0 提供了新的依赖方式 runtimeOnly ，通过 runtimeOnly 方式依赖时，依赖项仅在运行时对模块及其消费者可用，编译期间依赖项的代码对其消费者时完全隔离的。
+    }
     if (rootProject.ext.useArouter) {
         annotationProcessor rootProject.ext.dependencies["arouter_compiler"]
     }

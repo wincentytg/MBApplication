@@ -6,7 +6,10 @@ import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import com.alibaba.android.arouter.facade.Postcard;
+import com.alibaba.android.arouter.facade.callback.NavigationCallback;
 import com.alibaba.android.arouter.launcher.ARouter;
 import com.ytg.jzy.db.DBManager;
 import com.ytg.jzy.db.Options;
@@ -285,7 +288,28 @@ public class MainActivity extends BaseActivity {
 
 //Test test;跳转到model的activity
 //        startActivity(new Intent(this,TestActivity.class));
-                ARouter.getInstance().build("/TestActivity/module/").navigation();
+                ARouter.getInstance().build("/TestActivity/module/").navigation(context, new NavigationCallback() {
+                    @Override
+                    public void onFound(Postcard postcard) {
+                        Toast.makeText(context,"模块找到 了",Toast.LENGTH_SHORT).show();
+                    }
+
+                    @Override
+                    public void onLost(Postcard postcard) {
+                        //在release版本 如果找不到 配置的路由 不会提示there no router mached...
+                        Toast.makeText(context,"模块未加载",Toast.LENGTH_SHORT).show();
+                    }
+
+                    @Override
+                    public void onArrival(Postcard postcard) {
+                        Toast.makeText(context,"进入模块",Toast.LENGTH_SHORT).show();
+                    }
+
+                    @Override
+                    public void onInterrupt(Postcard postcard) {
+                        Toast.makeText(context,"模块中断",Toast.LENGTH_SHORT).show();
+                    }
+                });
                 break;
         }
     }
