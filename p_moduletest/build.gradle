@@ -9,7 +9,7 @@ if(moduleTestIsModule){
 android {
     compileSdkVersion parent.ext.compileSdkVersion
     buildToolsVersion parent.ext.buildToolsVersion
-
+    resourcePrefix "test_"//资源隔离 resourcePrefix 配置只能限定 res 中 xml 文件中定义的资源，并不能限定图片资源，如果组件配置了 resourcePrefix ，其 xml 中定义的资源没有以 resourcePrefix 的值作为前缀，在对应的 xml 中定义的资源会报红。resourcePrefix 的值就是指定的组件中 xml 资源的前缀。
     defaultConfig {
         targetSdkVersion parent.ext.targetSdkVersion
         minSdkVersion parent.ext.minSdkVersion

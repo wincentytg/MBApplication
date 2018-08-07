@@ -12,5 +12,5 @@ public interface IModel<T> {
      * @param size 每页数据的条数
      * @param loadListener
      */
-    void loadData(int page,int size, BaseLoadListener<T> loadListener);
+    void loadData(int page, int size, BaseLoadListener<T> loadListener);
 }

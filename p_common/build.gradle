@@ -76,13 +76,15 @@ dependencies {
     implementation project(':p_db')
     compile files('libs/eventbus.jar')
     compile files('libs/glide-3.7.0.jar')
+
+    compile project(':p_retrofit_rx')
     if (rootProject.ext.isOkhttp) {
-        compile project(':p_okhttp')
+//        compile project(':p_retrofit_rx')
     } else {
         compile project(':p_volley')
     }
     compile project(':p_db')
-    compile project(':p_retrofit_rx')
+
     if (rootProject.ext.useArouter) {
         compile rootProject.ext.dependencies["arouter_api"]
         annotationProcessor rootProject.ext.dependencies["arouter_compiler"]
