@@ -112,6 +112,7 @@ dependencies {
     implementation project(':p_common')
     if(!moduleTestIsModule) {
         runtimeOnly project(':p_moduletest')
+        runtimeOnly project(':p_login')
 //代码隔离 Gradle 3.0 提供了新的依赖方式 runtimeOnly ，通过 runtimeOnly 方式依赖时，依赖项仅在运行时对模块及其消费者可用，编译期间依赖项的代码对其消费者时完全隔离的。
     }
     if (rootProject.ext.useArouter) {

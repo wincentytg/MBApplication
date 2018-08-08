@@ -49,8 +49,9 @@ public class YTGApplication extends Application {
                 null, 1, null, null));
         mDbManager.setDebug(true);
 
-
+        initModuleService();
 
     }
+public void initModuleService(){}
 
 }
