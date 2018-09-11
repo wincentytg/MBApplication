@@ -10,6 +10,7 @@ import android.net.Network;
 import android.net.NetworkRequest;
 import android.os.Build;
 import android.os.IBinder;
+import android.view.View;
 
 import com.ytg.jzy.R;
 import com.ytg.jzy.databinding.ActivityLoginBinding;
@@ -118,5 +119,10 @@ public class LogInMVVMActivity extends SuperMvvmActivity<ActivityLoginBinding, L
     @Override
     public int getLayoutId() {
         return R.layout.activity_login_mvvm;
+    }
+
+    @Override
+    public void onClick(View v) {
+
     }
 }

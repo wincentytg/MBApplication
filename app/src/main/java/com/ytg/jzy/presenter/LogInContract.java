@@ -1,11 +1,9 @@
 package com.ytg.jzy.presenter;
 
-import com.ytg.jzy.p_common.mvvmcore.BaseLoadListener;
 import com.ytg.jzy.p_common.mvpcore.model.BaseModel;
 import com.ytg.jzy.p_common.mvpcore.presenter.BasePresenter;
 import com.ytg.jzy.p_common.mvpcore.view.BaseView;
-
-import java.util.List;
+import com.ytg.jzy.p_common.mvvmcore.BaseLoadListener;
 
 /**
  * mvp最本质的思路 是p持有m和v，p去执行m里的方法，
@@ -47,9 +45,14 @@ public interface LogInContract {
     abstract class LogInPresenter extends BasePresenter<IView, IModel> {
         public void request() {
             mModel.login(new BaseLoadListener() {
+//                @Override
+//                public void loadSuccess(List list) {
+//                    List<String> li = list;
+//                    mView.logSuccess();
+//                }
+
                 @Override
-                public void loadSuccess(List list) {
-                    List<String> li = list;
+                public void loadSuccess(Object obj) {
                     mView.logSuccess();
                 }
 

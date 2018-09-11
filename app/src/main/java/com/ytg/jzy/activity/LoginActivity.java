@@ -2,6 +2,7 @@ package com.ytg.jzy.activity;
 
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
 
 import com.ytg.jzy.R;
 import com.ytg.jzy.p_common.activity.SuperPresenterActivity;
@@ -82,4 +83,8 @@ public class LoginActivity extends SuperPresenterActivity<LogInContract.IView, L
     }
 
 
+    @Override
+    public void onClick(View v) {
+
+    }
 }

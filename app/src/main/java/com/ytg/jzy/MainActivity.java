@@ -154,7 +154,7 @@ public class MainActivity extends BaseActivity {
                             }
 
                         });
-                MRequestManager.getInstance().cancle("loginin");
+//                MRequestManager.getInstance().cancle("loginin");
             }
         });
         findViewById(R.id.mBtncancle).setOnClickListener(new View.OnClickListener() {
