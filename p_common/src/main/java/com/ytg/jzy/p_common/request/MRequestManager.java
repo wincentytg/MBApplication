@@ -36,7 +36,7 @@ public class MRequestManager<T> {
         }
     }
 
-    public static void setsRequestCancle(IRequestCancleStrategy sRequestCancle) {
+    public  void setsRequestCancle(IRequestCancleStrategy sRequestCancle) {
         MRequestManager.sRequestCancle = sRequestCancle;
     }
 

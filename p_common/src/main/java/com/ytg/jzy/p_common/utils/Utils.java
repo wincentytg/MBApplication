@@ -20,6 +20,7 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.lang.reflect.Field;
 import java.lang.reflect.Method;
+import java.math.RoundingMode;
 import java.text.DateFormat;
 import java.text.DecimalFormat;
 import java.text.SimpleDateFormat;
@@ -142,12 +143,34 @@ public class Utils {
 		}
 		return false;
 	}
+	public static String formatFloat(double value) {
 
+		DecimalFormat df = new DecimalFormat("0.00");
+		df.setRoundingMode(RoundingMode.HALF_UP);
+		return df.format(value);
+	}
 	public static String getNowtime() {
 		SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");// 设置日期格式
 		return df.format(new Date());//
 	}
+	public static int getBarHeight(Context context){
+		Class<?> c = null;
+		Object obj = null;
+		Field field = null;
+		int x = 0, sbar = 38;//默认为38，貌似大部分是这样的
 
+		try {
+			c = Class.forName("com.android.internal.R$dimen");
+			obj = c.newInstance();
+			field = c.getField("status_bar_height");
+			x = Integer.parseInt(field.get(obj).toString());
+			sbar = context.getResources().getDimensionPixelSize(x);
+
+		} catch (Exception e1) {
+			e1.printStackTrace();
+		}
+		return sbar;
+	}
 	/**
 	 * 日期格式为 yyyy-MM-dd
 	 * 

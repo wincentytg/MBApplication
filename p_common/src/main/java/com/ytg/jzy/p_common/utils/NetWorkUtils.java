@@ -12,6 +12,8 @@ import android.telephony.cdma.CdmaCellLocation;
 import android.telephony.gsm.GsmCellLocation;
 import android.util.Log;
 
+import com.ytg.jzy.p_common.mvvmcore.BaseLoadListener;
+
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.text.DecimalFormat;
@@ -128,6 +130,7 @@ public class NetWorkUtils {
 
     /**
      * cmd 命令
+     *
      * @param cmd
      * @param filter
      * @return
@@ -163,7 +166,8 @@ public class NetWorkUtils {
             ConnectivityManager connectivity = (ConnectivityManager) context
                     .getSystemService(Context.CONNECTIVITY_SERVICE);
             if (connectivity == null) {
-                ToastUtil.showMessage("无法连接网络");
+//                ToastUtil.showMessage("无法连接网络");
+                LogUtil.i("无法连接网络");
                 return false;
             }
 
@@ -178,7 +182,8 @@ public class NetWorkUtils {
         } catch (Exception e) {
             e.printStackTrace();
         }
-        ToastUtil.showMessage("无法连接网络");
+        LogUtil.i("无法连接网络");
+//        ToastUtil.showMessage("无法连接网络");
         return false;
     }
 
@@ -418,6 +423,7 @@ public class NetWorkUtils {
 
     /**
      * 获取网络类型
+     *
      * @param networkType
      * @return
      */
@@ -452,6 +458,7 @@ public class NetWorkUtils {
 
     /**
      * 获取网络类型
+     *
      * @param context
      * @return
      */
@@ -467,8 +474,8 @@ public class NetWorkUtils {
                 if (type == ConnectivityManager.TYPE_WIFI) {
                     networkType = NETWORK_TYPE_WIFI;
                 } else if (type == ConnectivityManager.TYPE_MOBILE) {
-                    TelephonyManager telephonyManager = (TelephonyManager)context.getSystemService(
-                                    Context.TELEPHONY_SERVICE);
+                    TelephonyManager telephonyManager = (TelephonyManager) context.getSystemService(
+                            Context.TELEPHONY_SERVICE);
                     networkType = telephonyManager.getNetworkType();
                 }
             } else {
@@ -491,7 +498,7 @@ public class NetWorkUtils {
                     && network.isConnected()) {
                 int type = network.getType();
                 if (type == ConnectivityManager.TYPE_WIFI) {
-                    WifiManager wifiManager = (WifiManager)context.getSystemService(Context.WIFI_SERVICE);
+                    WifiManager wifiManager = (WifiManager) context.getSystemService(Context.WIFI_SERVICE);
 
                     WifiInfo wifiInfo = wifiManager.getConnectionInfo();
                     if (wifiInfo != null) {
@@ -508,7 +515,7 @@ public class NetWorkUtils {
     public static String getWifiSsid(Context context) {
         String ssid = "";
         try {
-            final NetworkInfo network = ((ConnectivityManager)context.getSystemService(Context.CONNECTIVITY_SERVICE))
+            final NetworkInfo network = ((ConnectivityManager) context.getSystemService(Context.CONNECTIVITY_SERVICE))
                     .getActiveNetworkInfo();
             if (network != null && network.isAvailable()
                     && network.isConnected()) {
@@ -539,7 +546,7 @@ public class NetWorkUtils {
      * @return
      */
     public static boolean checkSimState(Context context) {
-        TelephonyManager tm = (TelephonyManager)context.getSystemService(Context.TELEPHONY_SERVICE);
+        TelephonyManager tm = (TelephonyManager) context.getSystemService(Context.TELEPHONY_SERVICE);
         if (tm.getSimState() == TelephonyManager.SIM_STATE_ABSENT
                 || tm.getSimState() == TelephonyManager.SIM_STATE_UNKNOWN) {
             return false;
@@ -552,35 +559,47 @@ public class NetWorkUtils {
      * 获取imei
      */
     public static String getImei(Context context) {
-        TelephonyManager mTelephonyMgr = (TelephonyManager)context.getSystemService(Context.TELEPHONY_SERVICE);
+        TelephonyManager mTelephonyMgr = (TelephonyManager) context.getSystemService(Context.TELEPHONY_SERVICE);
         String imei = mTelephonyMgr.getDeviceId();
         if (imei == null) {
             imei = "000000000000000";
         }
         return imei;
     }
+
     /**
      * 判断当前的网络连接状态是否能用 比如一些需要登录的网络连接上没登录依然没法上网，
      * 找一个一定可以访问的ping一下就行了，这里以 www.baidu.com做参考。
      * return 0可用   其他值不可用
      */
-    public static boolean ping() {
+    public static void ping(String address,final LoadPingBack back) {
+//        if (address.length() == 0) {
+//            address = "www.baidu.com";
+//        }
+//        Runtime runtime = Runtime.getRuntime();
+//        try {
+//            Process p = runtime.exec("ping -c 1 " + address);
+//            int ret = p.waitFor();
+//            return ret == 0;
+//        } catch (Exception e) {
+//            e.printStackTrace();
+//        }
+        new PingAsyncTask(new LoadPingBack(){
 
-        Runtime runtime = Runtime.getRuntime();
-        try {
-            Process p = runtime.exec("ping -c 3 www.baidu.com");
-            int ret = p.waitFor();
-            return ret==0;
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-        return false;
+            @Override
+            public boolean loadSuccess(boolean obj) {
+                back.loadSuccess(obj);
+                return obj;
+            }
+        }).execute(address);
     }
+
     public static String getPhoneImsi(Context context) {
         TelephonyManager mTelephonyMgr = (TelephonyManager) context.getSystemService(Context.TELEPHONY_SERVICE);
         return mTelephonyMgr.getSubscriberId();
     }
-    public static class CellInfo{
+
+    public static class CellInfo {
         private String mcc;
         private String mnc;
 
@@ -600,6 +619,7 @@ public class NetWorkUtils {
             this.mnc = mnc;
         }
     }
+
     public static CellInfo getNetInfo(Context context) {
         CellInfo info = new CellInfo();
         try {

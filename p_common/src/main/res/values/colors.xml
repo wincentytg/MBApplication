@@ -4,7 +4,10 @@
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
     <color name="list_divider">#ffdadada</color>
-
+    <color name="color_333333">#333333</color>
+    <color name="color_666666">#666666</color>
+    <color name="color_999999">#999999</color>
+    <color name="color_f4f4f4">#f4f4f4</color>
     <color name="white">#FFFFFFFF</color>
     <color name="red">#ffff3e3e </color>
     <color name="gray">#ff9a9b9c</color>
@@ -46,13 +49,16 @@
     <color name="dialog_btn_press">#ffece5df</color>
     <color name="bule14">#3300ff</color>
     <color name="green">#45CD87</color>
+    <color name="green_light">#99F289</color>
+
     <color name="text_disabled">#ffa8a8a8</color>
     <color name="hint_color_white_bg">#ffc5c5c5</color>
 
     <color name="action_bar_tittle_color">#ffcfcfcf</color>
-    <color name="action_bar_text_color">#ff455a64</color>
+    <color name="action_bar_text_color">#ffffff</color>
     <color name="status_bar_color">#ffb0bec5</color>
     <color name="action_bar_color">#ffffffff</color>
+    <color name="action_bar_color2">#C70019</color>
     <color name="search_text_color">#ff263238</color>
     <color name="white_box_hint_text_color">#ff90a4ae</color>
     <color name="text_highlight_color">#800288d1</color>
@@ -95,6 +101,8 @@
     <color name="ytx_stroke_disable">#004892ea</color>
     <color name="ytx_stroke_normal">#ff4892ea</color>
     <color name="ytx_stroke_pressed">#ff468ee8</color>
+
+    <color name="color_FFBA2F">#FFBA2F</color>
 
     <color name="last_msg_tv_color">#ffaaaaaa</color>
 </resources>

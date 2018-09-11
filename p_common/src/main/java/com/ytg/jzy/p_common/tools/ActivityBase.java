@@ -28,6 +28,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.ytg.jzy.p_common.R;
+import com.ytg.jzy.p_common.YTGApplicationContext;
 import com.ytg.jzy.p_common.menu.ActionMenuItem;
 import com.ytg.jzy.p_common.utils.LogUtil;
 import com.ytg.jzy.p_common.utils.TextUtil;
@@ -81,7 +82,7 @@ public abstract class ActivityBase {
      */
     private SearchViewHelper mSearchViewHelper;
     private int mSmallPadding;
-    private View mActionBarLayout;
+    public View mActionBarLayout;
     SystemBarTintManager mSystemBarTintManager;
     /**
      * 菜单按钮缓存
@@ -252,11 +253,23 @@ public abstract class ActivityBase {
     }
 
     public void setNetworkInfoStatus(boolean isConnected) {
-        if (isConnected) {
-            mTvNetworkInfo.setVisibility(View.GONE);
-        } else {
-            mTvNetworkInfo.setVisibility(View.VISIBLE);
+//        if (isConnected) {
+//            mTvNetworkInfo.setVisibility(View.GONE);
+//        } else {
+//            mTvNetworkInfo.setVisibility(View.VISIBLE);
+//        }
+        if(mActionMenuItems.size()>0){
+            ActionMenuItem item = mActionMenuItems.get(mActionMenuItems.size()-1);
+            if(item.getTitle().toString().contains("在线")||item.getTitle().toString().contains("离线")){
+                if(isConnected){
+                    item.setResId(R.mipmap.ic_online); item.setTitle("在线");
+                }else{
+                    item.setResId(R.mipmap.ic_offline); item.setTitle("离线");
+                }
+            }
+            invalidateActionMenu();
         }
+
 
     }
 
@@ -365,7 +378,7 @@ public abstract class ActivityBase {
 
         for (int i = 0; i < mActionMenuItems.size(); i++) {
             ActionMenuItem _tempItem = mActionMenuItems.get(i);
-            if (_tempItem.getResId() != menuId) {
+            if (_tempItem.getMenuId() != menuId) {
                 continue;
             }
             LogUtil.e(TAG, "match menu, id " + menuId + ", remove it");
@@ -436,7 +449,7 @@ public abstract class ActivityBase {
                 ActionMenuOnClickListener mClickListener = new ActionMenuOnClickListener(menuItem, actionMenuItem);
                 ActionMenuOnLongClickListener mLongClickListener = new ActionMenuOnLongClickListener(actionMenuItem);
 
-                if (actionMenuItem.getResId() != 0) {
+                if (actionMenuItem.getResId() != 0 && actionMenuItem.getTitle().equals("")) {
                     ImageButton button;
                     if (actionMenuItem.getLongClickListener() != null) {
                         int minWidth = BackwardSupportUtil.fromDPToPix(mActionBarActivity, 56);
@@ -481,21 +494,28 @@ public abstract class ActivityBase {
                     if (actionMenuItem.getCustomView() == null) {
                         actionMenuItem.setCustomView(View.inflate(mActionBarActivity, R.layout.ytx_action_option_view, null));
                     }
-
+                    LinearLayout rootll = actionMenuItem.getCustomView().findViewById(R.id.rootll);
                     TextView mNormalAction;
+                    mNormalAction = (TextView) actionMenuItem.getCustomView().findViewById(R.id.action_option_button);
                     if (actionMenuItem.getActionType() == ActionMenuItem.ActionType.BUTTON) {
-                        mNormalAction = (TextView) actionMenuItem.getCustomView().findViewById(R.id.action_option_style_button);
-                        actionMenuItem.getCustomView().findViewById(R.id.divider).setVisibility(View.GONE);
-                        actionMenuItem.getCustomView().findViewById(R.id.action_option_button).setVisibility(View.GONE);
-                        mNormalAction.setPadding(mSmallPadding, 0, mSmallPadding, 0);
-
+//                        mNormalAction = (TextView) actionMenuItem.getCustomView().findViewById(R.id.action_option_button);
+////                        actionMenuItem.getCustomView().findViewById(R.id.divider).setVisibility(View.GONE);
+////                        actionMenuItem.getCustomView().findViewById(R.id.action_option_button).setVisibility(View.GONE);
+////                        mNormalAction.setPadding(mSmallPadding, 0, mSmallPadding, 0);
+//
                     } else {
-                        mNormalAction = (TextView) actionMenuItem.getCustomView().findViewById(R.id.action_option_button);
-                        actionMenuItem.getCustomView().findViewById(R.id.divider).setVisibility(View.GONE);
-                        actionMenuItem.getCustomView().findViewById(R.id.action_option_button).setVisibility(View.GONE);
+////                        actionMenuItem.getCustomView().findViewById(R.id.divider).setVisibility(View.GONE);
+////                        actionMenuItem.getCustomView().findViewById(R.id.action_option_button).setVisibility(View.GONE);
+////                        mNormalAction.setBackgroundResource(R.drawable.ytx_actionbar_menu_selector);
+                    }
+                    if (actionMenuItem.getResId() != 0) {
+                        ((ImageView) actionMenuItem.getCustomView().findViewById(R.id.divider)).setImageResource(actionMenuItem.getResId());
+                    }
+                    if (actionMenuItem.getBackgroundres() != 0) {
+                        rootll.setBackground(YTGApplicationContext.getContext().getResources().getDrawable(actionMenuItem.getBackgroundres()));
+                    }else {
                         mNormalAction.setBackgroundResource(R.drawable.ytx_actionbar_menu_selector);
                     }
-
                     mNormalAction.setVisibility(View.VISIBLE);
                     mNormalAction.setText(actionMenuItem.getTitle());
                     mNormalAction.setOnClickListener(mClickListener);
@@ -764,7 +784,17 @@ public abstract class ActivityBase {
         actionMenuItem.setTitle(text);
         invalidateActionMenu();
     }
+    public void setActionMenuText(int menuId, CharSequence text,int resid) {
+        ActionMenuItem actionMenuItem = findActionMenuItemById(menuId);
 
+        if (actionMenuItem == null || text == null || actionMenuItem.getTitle().equals(text.toString())) {
+            return;
+        }
+
+        actionMenuItem.setTitle(text);
+        actionMenuItem.setResId(resid);
+        invalidateActionMenu();
+    }
     /**
      * 删除全部的菜单
      */
@@ -775,7 +805,14 @@ public abstract class ActivityBase {
         mActionMenuItems.clear();
         invalidateActionMenu();
     }
-
+public ActionMenuItem getActionMenuItem(int menuId){
+    for (int i = 0; i < mActionMenuItems.size(); i++) {
+        if (mActionMenuItems.get(i).getMenuId() == menuId) {
+            return mActionMenuItems.get(i);
+        }
+    }
+    return null;
+}
     /**
      * 根据菜单的编号删除菜单
      *

@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<selector
-  xmlns:android="http://schemas.android.com/apk/res/android">
-    <item android:state_enabled="false" android:drawable="@android:drawable/ic_menu_send" />
-    <item android:drawable="@android:drawable/ic_menu_send" />
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:drawable="@android:drawable/ic_menu_send" android:state_enabled="false" />
+    <item android:layout_width="wrap_content" android:layout_height="wrap_content" android:drawable="@android:drawable/ic_menu_send" />
 </selector>

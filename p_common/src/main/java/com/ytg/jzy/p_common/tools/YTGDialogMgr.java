@@ -3,7 +3,6 @@ package com.ytg.jzy.p_common.tools;
 import android.content.Context;
 import android.content.DialogInterface;
 
-import com.ytg.jzy.p_common.dialog.LoadingDialog;
 import com.ytg.jzy.p_common.dialog.YTGProgressDialog;
 
 
@@ -14,10 +13,10 @@ import com.ytg.jzy.p_common.dialog.YTGProgressDialog;
 public class YTGDialogMgr {
 
     private static final String TAG = "YTG.YTGDialogMgr";
-    public static void showDialog(Context context){
-        LoadingDialog dialog = new LoadingDialog(context);
-        dialog.show();
-    }
+//    public static void showDialog(Context context){
+//        LoadingDialog dialog = new LoadingDialog(context);
+//        dialog.show();
+//    }
     /**
      * 显示一个进度对话框
      * @param context 上下文

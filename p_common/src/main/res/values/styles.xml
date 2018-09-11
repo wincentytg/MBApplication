@@ -39,6 +39,14 @@
         <item name="android:activityCloseEnterAnimation">@anim/activity_close_enter</item>
         <item name="android:activityCloseExitAnimation">@anim/activity_close_exit</item>
     </style>
+    <style name="style_btn_red">
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">45dp</item>
+        <item name="android:layout_margin">10dp</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:background">@drawable/circle_bg_red</item>
+    </style>
     <style name="YuntxPopupMenuStyle" parent="@style/Widget.AppCompat.PopupMenu" >
         <item name="android:popupBackground">@drawable/ytx_ofm_menu_bg</item>
     </style>
@@ -202,6 +210,13 @@
         <item name="android:windowSoftInputMode">adjustPan</item>
     </style>
     <style name="progressBarHorizontal_color" parent="android:Widget.ProgressBar.Horizontal">
+        <item name="android:indeterminateOnly">false</item>
+        <item name="android:progressDrawable">@drawable/progress_color_horizontal_2</item>
+        <item name="android:indeterminateDrawable">@drawable/progressbar_color</item>
+        <item name="android:minHeight">5dip</item>
+        <item name="android:maxHeight">5dip</item>
+    </style>
+    <style name="progressBarHorizontal_color_7FACEE" parent="android:Widget.ProgressBar.Horizontal">
         <item name="android:indeterminateOnly">false</item>
         <item name="android:progressDrawable">@drawable/progress_color_horizontal</item>
         <item name="android:indeterminateDrawable">@drawable/progressbar_color</item>

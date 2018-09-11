@@ -1,7 +1,5 @@
 package com.ytg.jzy.p_common.mvvmcore;
 
-import java.util.List;
-
 /**
  *
  * @author 于堂刚
@@ -13,7 +11,7 @@ public interface BaseLoadListener<T> {
      *
      * @param list
      */
-    void loadSuccess(List<T> list);
+    void loadSuccess(T obj);
 
     /**
      * 加载失败

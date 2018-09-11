@@ -36,6 +36,7 @@ public class Event extends EventBus {
      * 网络断开
      */
 	public static final int NET_WORK_STATE_DISCONNNECT = 3;
+	public static final int UPDATE_DT_PROGRESS = 4;
 	private EventTag tag;
 	private int mIntTag;
 	private int id;

@@ -73,4 +73,9 @@ showPostingDialog("加载动画");
     public boolean onMenuItemClick(MenuItem item) {
         return false;
     }
+
+    @Override
+    public void onClick(View v) {
+
+    }
 }

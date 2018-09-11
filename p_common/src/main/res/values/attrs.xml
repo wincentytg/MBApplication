@@ -13,7 +13,22 @@
         <attr name="iconTip" format="string" />
     </declare-styleable>
 
-
+    <declare-styleable name="view_crash_item">
+        <attr name="bitian" format="boolean" />
+        <attr name="setActGoVisible" format="boolean" />
+        <attr name="setLeftText" format="string" />
+        <attr name="setLeftTextSize" format="integer" />
+        <attr name="setLeftTextColor" format="color" />
+        <attr name="setEditBg" format="reference" />
+        <attr name="canEdit" format="boolean" />
+        <attr name="LeftTextWidth" format="integer" />
+        <attr name="setClearVisible" format="boolean" />
+        <attr name="setDravityTv" format="boolean" />
+        <attr name="LeftTextMargin" format="integer" />
+        <attr name="setRightTextColor" format="color" />
+        <attr name="setRightTextSize" format="integer" />
+        <attr name="singleLine" format="boolean" />
+    </declare-styleable>
     <declare-styleable name="setting_info">
         <attr name="item_titleText" format="string" />
         <attr name="item_detailText" format="string" />

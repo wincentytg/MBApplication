@@ -13,7 +13,6 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.ytg.jzy.p_common.R;
-import com.ytg.jzy.p_common.utils.DensityUtil;
 
 /**
  *
@@ -42,7 +41,7 @@ import com.ytg.jzy.p_common.utils.DensityUtil;
 		((Activity)context).getWindowManager().getDefaultDisplay().getMetrics(metric);
 		int mScreenWidth = metric.widthPixels;
 		WindowManager.LayoutParams lp = getWindow().getAttributes();
-		lp.width =mScreenWidth - DensityUtil.dip2px(context, 40); //设置宽度
+		lp.width =mScreenWidth /2;//- DensityUtil.dip2px(context, 40); //设置宽度
 		getWindow().setAttributes(lp);
 	}
 

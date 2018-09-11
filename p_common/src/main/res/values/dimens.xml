@@ -128,5 +128,5 @@
     <dimen name="bigSmallListHeight">60.0dip</dimen>
     <dimen name="bigSmallButtonWidth">80.0dip</dimen>
     <dimen name="bigNormalListHeight">78.0dip</dimen>
-
+    <dimen name="view_crash_item_LeftTextWidth">84px</dimen>
 </resources>

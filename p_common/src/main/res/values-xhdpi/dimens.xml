@@ -19,4 +19,5 @@
     <dimen name="size_top_title_size">20.0dip</dimen>
     <dimen name="size_small">14.0dip</dimen>
     <dimen name="size_tiny">12.0dip</dimen>
+    <dimen name="view_crash_item_LeftTextWidth">104px</dimen>
 </resources>

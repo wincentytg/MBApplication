@@ -7,4 +7,7 @@
     <string name="common_enter_activity">当前所在页面,</string>
     <string name="str_settext">设置字体大小</string>
     <string name="app_download_update_package">%s更新包下载</string>
+    <string name="role_zj">作业人员</string>
+    <string name="role_hj">互检人员</string>
+    <string name="role_zhij">质检人员</string>
 </resources>

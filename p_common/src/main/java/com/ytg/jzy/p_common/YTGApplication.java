@@ -16,7 +16,8 @@ import com.ytg.p_db.DBManager;
 public class YTGApplication extends Application {
 
     public DBManager mDbManager;
-//    public SharedPreferencesHelper sp;
+
+    //    public SharedPreferencesHelper sp;
     @Override
     protected void attachBaseContext(Context base) {
         super.attachBaseContext(base);
@@ -52,6 +53,8 @@ public class YTGApplication extends Application {
         initModuleService();
 
     }
-public void initModuleService(){}
+
+    public void initModuleService() {
+    }
 
 }

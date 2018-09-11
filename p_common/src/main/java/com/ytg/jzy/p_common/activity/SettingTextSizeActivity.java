@@ -152,4 +152,9 @@ public class SettingTextSizeActivity extends SuperPresenterActivity implements M
         }
         return false;
     }
+
+    @Override
+    public void onClick(View v) {
+
+    }
 }

@@ -13,8 +13,11 @@
 
 import android.os.Handler;
 import android.os.Looper;
+import android.view.Gravity;
+import android.widget.TextView;
 import android.widget.Toast;
 
+import com.ytg.jzy.p_common.R;
 import com.ytg.jzy.p_common.YTGApplicationContext;
 
 
@@ -29,8 +32,9 @@ public class ToastUtil {
     private static Toast toast = null;
 
     private static Object synObj = new Object();
-
+    static TextView title;
     public static void showMessage(final String msg) {
+
         showMessage(msg, Toast.LENGTH_SHORT);
     }
 
@@ -58,10 +62,27 @@ public class ToastUtil {
                 synchronized (synObj) { //加上同步是为了每个toast只要有机会显示出来
                     if (toast != null) {
                         //toast.cancel();
-                        toast.setText(msg);
-                        toast.setDuration(len);
+//                        toast.setText(msg);
+//                        toast.setDuration(len);
+
+                        title.setText(msg+"");
                     } else {
-                        toast = Toast.makeText(YTGApplicationContext.getContext(), msg, len);
+//                        toast = Toast.makeText(YTGApplicationContext.getContext(), msg, len);
+                        toast = new Toast(YTGApplicationContext.getContext());
+                        title = new TextView(YTGApplicationContext.getContext());
+                        title.setText(msg+"");
+                        title.setMinWidth(500);
+                        title.setMaxWidth(1000);
+                        title.setMinHeight(100);
+                        title.setMaxHeight(400);
+                        title.setPadding(8,0,8,0);
+                        title.setTextColor(YTGApplicationContext.getContext().getResources().getColor(R.color.white));
+                        title.setTextSize(16);
+                        title.setGravity(Gravity.CENTER);
+                        title.setBackgroundColor(YTGApplicationContext.getContext().getResources().getColor(R.color.color_FFBA2F));
+
+                        toast.setGravity(Gravity.CENTER,12,20);
+                        toast.setView(title);
                     }
                     toast.show();
                 }
@@ -81,10 +102,23 @@ public class ToastUtil {
                 synchronized (synObj) {
                     if (toast != null) {
                         //toast.cancel();
-                        toast.setText(msg);
-                        toast.setDuration(len);
+//                        toast.setText(msg);
+//                        toast.setDuration(len);
+                        title.setText(msg+"");
                     } else {
-                        toast = Toast.makeText(YTGApplicationContext.getContext(), msg, len);
+//                        toast = Toast.makeText(YTGApplicationContext.getContext(), msg, len);
+                        toast = new Toast(YTGApplicationContext.getContext());
+                        title = new TextView(YTGApplicationContext.getContext());
+                        title.setText(YTGApplicationContext.getContext().getResources().getString(msg)+"");
+                        title.setWidth(500);
+                        title.setHeight(100);
+                        title.setTextColor(YTGApplicationContext.getContext().getResources().getColor(R.color.white));
+                        title.setTextSize(16);
+                        title.setGravity(Gravity.CENTER);
+                        title.setBackgroundColor(YTGApplicationContext.getContext().getResources().getColor(R.color.color_FFBA2F));
+
+                        toast.setGravity(Gravity.CENTER,12,20);
+                        toast.setView(title);
                     }
                     toast.show();
                 }

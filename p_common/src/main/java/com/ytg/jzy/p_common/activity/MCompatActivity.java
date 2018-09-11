@@ -34,7 +34,6 @@ import com.ytg.jzy.p_common.tools.SharedPreferencesHelper;
 import com.ytg.jzy.p_common.tools.YTGDialogMgr;
 import com.ytg.jzy.p_common.utils.Event;
 import com.ytg.jzy.p_common.utils.LogUtil;
-import com.ytg.jzy.p_common.utils.NetWorkUtils;
 
 import java.lang.ref.WeakReference;
 import java.util.LinkedHashMap;
@@ -49,7 +48,7 @@ import de.greenrobot.event.EventBus;
  * @author 于堂刚
  */
 //@ActivityTransition(0)
-public abstract class MCompatActivity extends PermissionActivity {
+public abstract class MCompatActivity extends PermissionActivity implements View.OnClickListener {
 
     private static final String TAG = "MCompatActivity";
     /**
@@ -59,7 +58,7 @@ public abstract class MCompatActivity extends PermissionActivity {
     private boolean isNotCancleHandle;
     public Context context;
     //    WeakReference<MCompatActivity> context;
-    SharedPreferencesHelper sp;
+    public SharedPreferencesHelper sp;
     public ActivityBase mBaseActivity = new ActivityBase() {
         @Override
         public void onInit() {
@@ -93,7 +92,7 @@ public abstract class MCompatActivity extends PermissionActivity {
 
         @Override
         public boolean isActionBarTitleMiddle() {
-            return true;
+            return false;
         }
 
         @Override
@@ -102,6 +101,9 @@ public abstract class MCompatActivity extends PermissionActivity {
         }
     };
 
+    public View getActionBarView() {
+        return mBaseActivity.mActionBarLayout;
+    }
 
     @Override
     public void onContentChanged() {
@@ -111,21 +113,21 @@ public abstract class MCompatActivity extends PermissionActivity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        if (!allowPlenaryContentView()) {
-            // 不需要帮忙初始化标题栏
-            LogUtil.e(TAG, "can not initBaseIp activity");
-        } else {
-            mBaseActivity.init(getBaseContext(), this);
+//        if (!allowPlenaryContentView()) {
+//            // 不需要帮忙初始化标题栏
+//            LogUtil.e(TAG, "can not initBaseIp activity");
+//        } else {
+        mBaseActivity.init(getBaseContext(), this);
 
-            // 默认设置返回按键
-            setNavigationOnClickListener(new MenuItem.OnMenuItemClickListener() {
-                @Override
-                public boolean onMenuItemClick(MenuItem item) {
-                    onDisplayHomeAsUp();
-                    return false;
-                }
-            });
-        }
+        // 默认设置返回按键
+        setNavigationOnClickListener(new MenuItem.OnMenuItemClickListener() {
+            @Override
+            public boolean onMenuItemClick(MenuItem item) {
+                onDisplayHomeAsUp();
+                return false;
+            }
+        });
+//        }
 
         context = new WeakReference<MCompatActivity>(this).get();
         sp = YTGApplicationContext.sp;
@@ -136,6 +138,7 @@ public abstract class MCompatActivity extends PermissionActivity {
         initContent();
         initNetworkInfoLis();
     }
+
 
     /**
      * 初始化网络链接状态的监听 ，在没网络的时候提供更好的交互
@@ -149,13 +152,22 @@ public abstract class MCompatActivity extends PermissionActivity {
                 public void onAvailable(Network network) {
                     super.onAvailable(network);
 //                LogUtil.i("网络链接"+ NetWorkUtils.ping());
-                    Event event = new Event();
-                    if (NetWorkUtils.ping()) {
+                    final Event event = new Event();
+//                    NetWorkUtils.ping(BuildConfig.PING, new LoadPingBack() {
+//                        @Override
+//                        public boolean loadSuccess(boolean obj) {
+//                            if (obj) {
+//                                event.setmIntTag(Event.NET_WORK_STATE_CONNNECTED);
+//                            } else {
+//                                event.setmIntTag(Event.NET_WORK_STATE_DISCONNNECT);
+//                            }
+//                            postEvent(event);
+//                            return false;
+//                        }
+//                    });
                         event.setmIntTag(Event.NET_WORK_STATE_CONNNECTED);
-                    } else {
-                        event.setmIntTag(Event.NET_WORK_STATE_DISCONNNECT);
-                    }
                     postEvent(event);
+
                 }
 
                 @Override
@@ -748,7 +760,7 @@ public abstract class MCompatActivity extends PermissionActivity {
     }
 
     public void setSystemStatusBar() {
-        StatusBarCompat.setStatusBarColor(this, getResources().getColor(R.color.action_bar_color));
+        StatusBarCompat.setStatusBarColor(this, getResources().getColor(R.color.action_bar_color2));
     }
 
 

@@ -12,7 +12,7 @@ public class MDBManager {
 	private static IDBStrategy sRequest;
 	private static volatile MDBManager sInstance;
 
-	private MDBManager() {
+	public MDBManager() {
 	}
 
 	//单例模式

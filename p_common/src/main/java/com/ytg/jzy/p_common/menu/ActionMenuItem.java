@@ -24,7 +24,7 @@ public class ActionMenuItem {
 	 * Menu id
 	 */
 	private int menuId;
-	
+	private int backgroundres;
 	/**
 	 * Menu icon or resource id
 	 */
@@ -95,6 +95,14 @@ public class ActionMenuItem {
 
 	public void setLongClickListener(View.OnLongClickListener longClickListener) {
 		this.longClickListener = longClickListener;
+	}
+
+	public int getBackgroundres() {
+		return backgroundres;
+	}
+
+	public void setBackgroundres(int backgroundres) {
+		this.backgroundres = backgroundres;
 	}
 
 	public int getResId() {

@@ -150,15 +150,26 @@ public class PermissionActivity extends AppCompatActivity {
                 }
                 break;
             case PERMISSIONS_REQUEST_INIT:
-                if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED && grantResults[1] == PackageManager.PERMISSION_GRANTED &&
-                        grantResults[2] == PackageManager.PERMISSION_GRANTED && grantResults[3] == PackageManager.PERMISSION_GRANTED) {
-                    LogUtil.d("onRequestPermissionsResult: Permission granted");
-                } else {
-                    LogUtil.d("onRequestPermissionsResult: Permission denied");
+                boolean grant=false;
+                for (int i = 0; i <grantResults.length ; i++) {
+                    if(grantResults[i] != PackageManager.PERMISSION_GRANTED ){
+                        grant = true;break;
+                    }
+                }
+                if(grant){
                     if (EasyPermissionsEx.somePermissionPermanentlyDenied(this, getRequestPermisstion(this))) {
                         EasyPermissionsEx.goSettings2Permissions(this, goSettingsRationaleInit, "去设置", RC_SETTINGS_SCREEN);
                     }
                 }
+//                if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED && grantResults[1] == PackageManager.PERMISSION_GRANTED &&
+//                        grantResults[2] == PackageManager.PERMISSION_GRANTED && grantResults[3] == PackageManager.PERMISSION_GRANTED) {
+//                    LogUtil.d("onRequestPermissionsResult: Permission granted");
+//                } else {
+//                    LogUtil.d("onRequestPermissionsResult: Permission denied");
+//                    if (EasyPermissionsEx.somePermissionPermanentlyDenied(this, getRequestPermisstion(this))) {
+//                        EasyPermissionsEx.goSettings2Permissions(this, goSettingsRationaleInit, "去设置", RC_SETTINGS_SCREEN);
+//                    }
+//                }
                 break;
             case PERMISSIONS_REQUEST_READ_CONTACTS:
                 if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
